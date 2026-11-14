@@ -1,4 +1,4 @@
 Options -Indexes
-<FilesMatch "^(config\.php|config\.local\.php|app\.php|schema\.sql|datos\.json|\.installation\.lock|LEEME\.txt)$">
+<FilesMatch "^(config\.php|config\.local\.php|app\.php|schema\.sql|imi_schema\.sql|imi_lib\.php|datos\.json|\.installation\.lock|LEEME\.txt)$">
     Require all denied
 </FilesMatch>

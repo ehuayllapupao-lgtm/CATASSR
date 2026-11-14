@@ -1,0 +1,6 @@
+<?php
+require __DIR__.'/app.php';require __DIR__.'/imi_lib.php';
+try{$d=db();$u=isset($_SESSION['uid'])?q($d,'SELECT * FROM usuarios WHERE id=? AND activo=1',[$_SESSION['uid']])->fetch():null;}catch(PDOException $ex){go('index.php');}
+if(!$u)go('index.php');if($u['rol']!=='admin'){http_response_code(403);exit('Solo el administrador puede habilitar IMI.');}
+$error='';if($_SERVER['REQUEST_METHOD']==='POST'){csrf();try{foreach(explode(';',file_get_contents(__DIR__.'/imi_schema.sql')) as $sql)if(trim($sql))$d->exec($sql);$_SESSION['flash']='IMI habilitado. Los datos existentes se conservaron.';go('imi.php');}catch(Throwable $ex){error_log($ex->getMessage());$error='No se pudo habilitar IMI. Revise la conexión y los permisos MySQL; puede reintentar sin borrar datos.';}}
+top('Habilitar IMI',$u);if($error)echo '<p class="alert">'.e($error).'</p>';?><section class="card"><h2>Actualizar sin reinstalar CATASSR</h2><p>Esta actualización agrega tres tablas para saldos de apertura e informes mensuales. Conserva usuarios, establecimientos, medicamentos y asignaciones.</p><form method="post"><?=token()?><button>Habilitar módulo IMI</button></form></section><?php bottom();

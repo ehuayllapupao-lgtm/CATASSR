@@ -2,6 +2,12 @@
 
 Aplicativo local para PHP + MySQL/MariaDB + XAMPP. Primera etapa de administración y accesos.
 
+## Nuevo: IMI de prueba
+
+[Descargar actualización IMI](descargas/CATASSR_IMI_PRUEBA.zip) · [Guía de instalación y fórmulas](ACTUALIZAR_IMI.md) · [Plantilla Excel](plantillas/IMI_CATASSR_PRUEBA.xlsx)
+
+Registro por establecimiento y mes con cuatro campos editables, saldos, CPM, pedidos sugeridos, borradores, envíos y seguimiento por microred. Las reglas son propuestas de prueba que deben validarse antes del uso operativo.
+
 ## Actualizar una instalación existente
 
 Para la corrección de creación de establecimientos y medicamentos, reemplaza únicamente `CATASSR/index.php`. Consulta [ACTUALIZAR.md](ACTUALIZAR.md). No reinstales ni importes SQL.
@@ -33,7 +39,7 @@ Las cuentas de los 196 responsables se crean conforme se asignan. No se generan 
 
 ## Alcance
 
-Esta entrega permite administrar accesos y consultar los catálogos. El ingreso mensual IMI, sus cálculos, resultados y avance de reportes corresponden a la siguiente etapa. La asignación de responsables que se muestra en el panel no representa cumplimiento mensual.
+Esta entrega incluye administración, catálogos e IMI de prueba. El seguimiento de IMI muestra informes pendientes, en borrador y enviados. El panel principal conserva sus cifras de asignación administrativa. Consulta ACTUALIZAR_IMI.md para conocer los cálculos y límites de la prueba.
 
 La contraseña del administrador se introduce durante la instalación; no está publicada en el repositorio.
 

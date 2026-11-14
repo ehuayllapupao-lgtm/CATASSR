@@ -2,6 +2,10 @@
 
 Aplicativo local para PHP + MySQL/MariaDB + XAMPP. Primera etapa de administración y accesos.
 
+## Actualizar una instalación existente
+
+Para la corrección de creación de establecimientos y medicamentos, reemplaza únicamente `CATASSR/index.php`. Consulta [ACTUALIZAR.md](ACTUALIZAR.md). No reinstales ni importes SQL.
+
 ## Descargar e instalar
 
 1. En GitHub, pulsa **Code → Download ZIP**.
@@ -17,6 +21,7 @@ Requiere PHP 8.1 o superior con PDO MySQL. `config.php` contiene los valores hab
 
 ## Incluye
 
+- Creación de establecimientos y medicamentos/insumos exclusiva del administrador, validada también en el servidor.
 - Cuatro roles: administrador, equipo técnico, cabecera de microred y encargada/o de establecimiento.
 - Crear, editar, desactivar, eliminar y asignar usuarios paulatinamente.
 - 196 establecimientos, 11 microredes y 13 medicamentos e insumos importados de los Excel proporcionados.

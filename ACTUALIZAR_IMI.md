@@ -7,7 +7,8 @@
 3. Copia la carpeta **CATASSR** que viene en el ZIP dentro de `C:\xampp\htdocs\` y acepta reemplazar los archivos existentes.
 4. Inicia Apache y MySQL. Ingresa como administrador en `http://localhost/CATASSR/`.
 5. Abre `http://localhost/CATASSR/actualizar_imi.php` y pulsa **Habilitar módulo IMI**.
-6. Encontrarás **IMI** justo debajo de **Panel principal**.
+6. Abre **Periodos IMI**, selecciona el mes y pulsa **Abrir / actualizar plazo**. Los meses no habilitados quedan de consulta.
+7. Encontrarás **IMI** justo debajo de **Panel principal**. Consulta ACTUALIZAR_PERIODOS_IMI.md para el control de ingreso.
 
 El ZIP de actualización contiene solo los archivos nuevos o modificados. No incluye config.php, config.local.php, el instalador ni datos de ejemplo. Conserva tu conexión, tus usuarios, asignaciones, establecimientos y medicamentos. La actualización añade tres tablas con CREATE TABLE IF NOT EXISTS. No vuelvas a ejecutar instalar.php ni importes la base inicial.
 

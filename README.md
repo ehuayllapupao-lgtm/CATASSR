@@ -2,6 +2,12 @@
 
 Aplicativo local para PHP + MySQL/MariaDB + XAMPP. Primera etapa de administración y accesos.
 
+## Nuevo: apertura y cierre de periodos IMI
+
+[Descargar actualización de periodos](descargas/CATASSR_PERIODOS_IMI.zip) · [Instrucciones](ACTUALIZAR_PERIODOS_IMI.md)
+
+Solo el administrador abre y cierra el ingreso de cada mes, con fechas y horas opcionales en hora de Lima. Los periodos no habilitados quedan de consulta. El cierre también bloquea solicitudes de páginas que quedaron abiertas; los enviados siguen disponibles según los permisos. Los borradores se conservan sin publicarse como enviados.
+
 ## Nuevo: IMI de prueba
 
 [Descargar actualización IMI](descargas/CATASSR_IMI_PRUEBA.zip) · [Guía de instalación y fórmulas](ACTUALIZAR_IMI.md) · [Plantilla Excel](plantillas/IMI_CATASSR_PRUEBA.xlsx)

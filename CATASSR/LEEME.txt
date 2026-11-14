@@ -1,0 +1,106 @@
+CATASSR — PRIMERA ETAPA
+PHP + MySQL/MariaDB + XAMPP. PHP 8.1 o superior con PDO MySQL.
+No requiere Composer, Node, Internet ni bibliotecas externas.
+
+INSTALACIÓN EN WINDOWS
+1. Extraiga el ZIP. Copie la carpeta CATASSR completa a C:\xampp\htdocs\
+   Debe existir C:\xampp\htdocs\CATASSR\index.php
+2. Abra XAMPP Control Panel e inicie Apache y MySQL.
+3. Si MySQL tiene contraseña o usa otro puerto, edite config.php.
+   Valores iniciales: host 127.0.0.1, puerto 3306, base catassr,
+   usuario root, contraseña vacía (instalación habitual de XAMPP).
+4. Abra http://localhost/CATASSR/instalar.php
+5. Introduzca la contraseña del administrador (mínimo 8 caracteres) y
+   presione Instalar CATASSR. El instalador crea la base y las tablas,
+   carga el catálogo y crea al administrador. NO necesita importar SQL.
+6. Entre en http://localhost/CATASSR/
+   Nombre: VICTOR INFANTES
+   Usuario: victor.infantes
+   Contraseña: la que introdujo al instalar.
+7. Puede cambiar su contraseña desde Panel principal > Cambiar mi contraseña.
+   La base almacena hashes; no guarda contraseñas de usuarios en texto plano.
+8. Tras instalar, elimine instalar.php, datos.json y schema.sql del servidor.
+   El instalador también se bloquea mediante un registro en la base.
+   No borre app.php, config.php, index.php ni style.css.
+
+GESTIÓN DE USUARIOS
+Administrador > Usuarios y accesos > Crear usuario.
+- Nombre completo y usuario único (letras, números, punto, guion o guion bajo).
+- Contraseña de al menos 8 caracteres.
+- Seleccione uno de los CUATRO roles enumerados en el pedido.
+- Cabecera de microred: seleccione su microred.
+- Encargada/o de establecimiento: seleccione su establecimiento.
+- Técnico y administrador: ámbito general; no necesitan asignación.
+- Se ignoran las asignaciones que no corresponden al rol elegido.
+- Marque Cuenta activa para permitir el acceso.
+Puede editar nombre, usuario, rol, asignación, contraseña y estado.
+Deje la contraseña vacía al editar para conservar la anterior.
+Desactivar conserva la cuenta y su asignación. Para reemplazar un encargado,
+reasigne o elimine la cuenta anterior y cree/asigne la nueva.
+Cada establecimiento admite una cuenta de encargado, incluso si está inactiva.
+Las cuentas de cabecera y técnico se crean paulatinamente.
+No se crean 196 contraseñas genéricas: los 196 establecimientos ya están
+registrados, con sus responsables inicialmente pendientes de asignación.
+No puede eliminarse o desactivarse usted mismo.
+
+PERMISOS
+Administrador: usuarios, asignaciones y edición de establecimientos/microredes.
+Equipo técnico: consulta general; sin permisos de modificación.
+Cabecera: consulta únicamente los establecimientos de su microred.
+Encargada/o: consulta únicamente su establecimiento; rol preparado para ingreso
+posterior de datos. No puede cambiar su asignación ni administrar usuarios.
+Todos pueden cambiar su propia contraseña.
+Los permisos se verifican en el servidor y se consulta el estado vigente de
+la cuenta en cada solicitud; no dependen de ocultar botones.
+
+DATOS CARGADOS
+Origen: ESTABLECIMIENTOS DE SALUD - MICRORED Y DISTRITOS 2025.xlsx,
+hoja BD 2025: 196 establecimientos y 11 microredes, con código, distrito y categoría.
+Se mantienen los códigos como texto para conservar los ceros iniciales.
+Se conserva la escritura original del archivo, incluido MICORED TAMBOGRANDE;
+puede corregir el nombre desde Microredes > Editar nombre.
+Origen de medicamentos: IMI PAGINA PHP.xlsx, hoja Hoja2.
+El catálogo conserva códigos, nombres, tipos y unidades de ese Excel.
+El panel distingue asignación de responsables del avance mensual de reportes.
+
+ALCANCE DE ESTA ENTREGA
+Primera etapa solicitada: acceso, cuatro roles, catálogos y gestión de cuentas.
+No incluye todavía captura IMI, envío mensual, indicadores, reportes, CPM,
+proyecciones, resultados numéricos o porcentaje de cumplimiento mensual.
+El catálogo del IMI está disponible para consulta.
+Antes de implementar los cálculos, se deben confirmar las fórmulas del Excel:
+la columna TOTAL dice A+B aunque existe otra columna de stock, y STOCK FINAL
+indica C-D aunque también aparece la columna de ajustes. No se han inventado
+fórmulas ni porcentajes de avance.
+
+OPERACIÓN LOCAL
+Cinco contraseñas incorrectas bloquean la cuenta durante cinco minutos.
+El administrador puede restablecerla asignando una nueva contraseña.
+Protección de formularios mediante token CSRF y consultas SQL preparadas.
+La distribución está preparada para XAMPP local. Para publicar en Internet,
+configure HTTPS y un usuario MySQL propio con permisos para la base catassr;
+no exponga phpMyAdmin ni la cuenta root de XAMPP.
+Guarde copias periódicas de la base desde phpMyAdmin > catassr > Exportar.
+Respalde la base antes de modificar datos o actualizar archivos.
+
+SI NO ABRE
+- Inicie Apache y MySQL; compruebe conflictos de puertos.
+- Si Apache usa puerto 8080, use http://localhost:8080/CATASSR/
+- Si cambió el puerto o contraseña de MySQL, actualice config.php.
+- Un error de instalación deja las tablas pero revierte la carga de datos;
+  corrija la conexión y reintente. No sobrescribe una base que contiene datos.
+- Detalles técnicos: C:\xampp\apache\logs\error.log o registro de PHP.
+- Use una base vacía si existe una instalación previa ajena a CATASSR.
+- schema.sql contiene la estructura; el instalador realiza la carga completa.
+
+VERIFICACIÓN
+Probado con PHP 8.4 y MariaDB 11.8: instalación, conteos, autenticación,
+creación de roles, aislamiento de ámbitos, bloqueo de reinstalación, CSRF,
+restricción de modificaciones, encargado único y bloqueo por intentos fallidos.
+No se ha ejecutado directamente en Windows/XAMPP ni hecho una prueba visual
+en navegador. Se incluyen estilos adaptables para escritorio y móvil.
+
+CONFIGURACIÓN PRIVADA
+Si necesita contraseñas MySQL, cree config.local.php devolviendo el mismo
+array que config.php con sus valores privados. No suba ese archivo a GitHub.
+La contraseña del administrador se introduce al instalar y no se publica.

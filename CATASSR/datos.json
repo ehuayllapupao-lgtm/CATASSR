@@ -1,0 +1,1665 @@
+{
+  "microredes": [
+    "MICRORED AYABACA",
+    "MICRORED BELLAVISTA",
+    "MICRORED LANCONES",
+    "MICRORED LAS LOMAS",
+    "MICRORED LOS ORGANOS",
+    "MICRORED MARCAVELICA",
+    "MICRORED PAIMAS",
+    "MICRORED PAITA",
+    "MICRORED QUERECOTILLO",
+    "MICRORED TALARA",
+    "MICORED TAMBOGRANDE"
+  ],
+  "establecimientos": [
+    {
+      "codigo": "01911",
+      "nombre": "C.S AYABACA",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-4"
+    },
+    {
+      "codigo": "01922",
+      "nombre": "P.S ANDURCO",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01915",
+      "nombre": "P.S ARAGOTO",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01918",
+      "nombre": "P.S ARREYPITE - PINGOLA",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01919",
+      "nombre": "P.S CALVAS DE SAMANGA",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01928",
+      "nombre": "P.S CHARAN",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01913",
+      "nombre": "P.S CHINCHIN",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01916",
+      "nombre": "P.S CHOCAN",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01926",
+      "nombre": "P.S EL TOLDO",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01920",
+      "nombre": "P.S ESPINDOLA",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01931",
+      "nombre": "P.S GICLAS",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "07320",
+      "nombre": "P.S GIGANTE",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01924",
+      "nombre": "P.S HUACHUMA",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01923",
+      "nombre": "P.S HUIRIQUINGUE",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "10726",
+      "nombre": "P.S JORAS",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01929",
+      "nombre": "P.S LAGUNAS DE CANGLY",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01914",
+      "nombre": "P.S OLLEROS",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01930",
+      "nombre": "P.S PORTACHUELO DE YANTA",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01921",
+      "nombre": "P.S REMOLINOS",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01927",
+      "nombre": "P.S SAMANGUILLA",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01925",
+      "nombre": "P.S SAUSAL",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "10727",
+      "nombre": "P.S SOCCHABAMBA",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01912",
+      "nombre": "P.S TAPAL",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01917",
+      "nombre": "P.S YANCHALA",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "19836",
+      "nombre": "P.S ANIA",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "19837",
+      "nombre": "P.S RODEOPAMPA",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "19844",
+      "nombre": "P.S HUILCO",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "18426",
+      "nombre": "P.S SAUSAL DE QUIROZ",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "19125",
+      "nombre": "P.S HUALCUY",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "28663",
+      "nombre": "P.S TABLAS",
+      "microred": 1,
+      "cod_distrito": "001-1",
+      "distrito": "DISTRITO AYABACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02001",
+      "nombre": "C.S BELLAVISTA",
+      "microred": 2,
+      "cod_distrito": "002-2",
+      "distrito": "DISTRITO BELLAVISTA",
+      "categoria": "I-4"
+    },
+    {
+      "codigo": "02004",
+      "nombre": "P.S CHALACALA BAJA",
+      "microred": 2,
+      "cod_distrito": "002-2",
+      "distrito": "DISTRITO BELLAVISTA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "06935",
+      "nombre": "P.S CHALACALA ALTA",
+      "microred": 2,
+      "cod_distrito": "002-2",
+      "distrito": "DISTRITO BELLAVISTA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02009",
+      "nombre": "P.S EL CUCHO",
+      "microred": 2,
+      "cod_distrito": "002-2",
+      "distrito": "DISTRITO BELLAVISTA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02003",
+      "nombre": "P.S HUANGALA",
+      "microred": 2,
+      "cod_distrito": "002-2",
+      "distrito": "DISTRITO BELLAVISTA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02010",
+      "nombre": "P.S JOSE OLAYA",
+      "microred": 2,
+      "cod_distrito": "002-2",
+      "distrito": "DISTRITO BELLAVISTA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02007",
+      "nombre": "P.S SAN VICENTE - PIEDRA RODADA",
+      "microred": 2,
+      "cod_distrito": "002-2",
+      "distrito": "DISTRITO BELLAVISTA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02005",
+      "nombre": "P.S SANTA ROSA - PIEDRA RODADA",
+      "microred": 2,
+      "cod_distrito": "002-2",
+      "distrito": "DISTRITO BELLAVISTA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02008",
+      "nombre": "P.S SOMATE ALTO",
+      "microred": 2,
+      "cod_distrito": "002-2",
+      "distrito": "DISTRITO BELLAVISTA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02006",
+      "nombre": "P.S SOMATE BAJO",
+      "microred": 2,
+      "cod_distrito": "002-2",
+      "distrito": "DISTRITO BELLAVISTA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02002",
+      "nombre": "P.S SOMATE CENTRO SERVICIOS",
+      "microred": 2,
+      "cod_distrito": "002-2",
+      "distrito": "DISTRITO BELLAVISTA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02019",
+      "nombre": "C.S MIGUEL CHECA",
+      "microred": 2,
+      "cod_distrito": "003-3",
+      "distrito": "DISTRITO MIGUEL CHECA",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "02020",
+      "nombre": "P.S JIBITO",
+      "microred": 2,
+      "cod_distrito": "003-3",
+      "distrito": "DISTRITO MIGUEL CHECA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01910",
+      "nombre": "HOSPITAL DE APOYO II- 2 SULLANA",
+      "microred": 2,
+      "cod_distrito": "004-4",
+      "distrito": "DISTRITO SULLANA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02014",
+      "nombre": "C.S EL OBRERO",
+      "microred": 2,
+      "cod_distrito": "004-4",
+      "distrito": "DISTRITO SULLANA",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "02013",
+      "nombre": "C.S NUEVE DE OCTUBRE",
+      "microred": 2,
+      "cod_distrito": "004-4",
+      "distrito": "DISTRITO SULLANA",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "02017",
+      "nombre": "C.S NUEVO SULLANA",
+      "microred": 2,
+      "cod_distrito": "004-4",
+      "distrito": "DISTRITO SULLANA",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "02011",
+      "nombre": "C.S SANTA TERESITA",
+      "microred": 2,
+      "cod_distrito": "004-4",
+      "distrito": "DISTRITO SULLANA",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "02012",
+      "nombre": "C.S VILLA PRIMAVERA",
+      "microred": 2,
+      "cod_distrito": "004-4",
+      "distrito": "DISTRITO SULLANA",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "02016",
+      "nombre": "P.S CANAL MOCHO - CIENEGUILLO SUR",
+      "microred": 2,
+      "cod_distrito": "004-4",
+      "distrito": "DISTRITO SULLANA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02015",
+      "nombre": "P.S CIENEGUILLO CENTRO",
+      "microred": 2,
+      "cod_distrito": "004-4",
+      "distrito": "DISTRITO SULLANA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "24065",
+      "nombre": "P.S CIENEGUILLO SUR ALTO",
+      "microred": 2,
+      "cod_distrito": "004-4",
+      "distrito": "DISTRITO SULLANA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02018",
+      "nombre": "C.S COMUNIDAD SALUDABLE",
+      "microred": 2,
+      "cod_distrito": "004-4",
+      "distrito": "DISTRITO SULLANA",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "02060",
+      "nombre": "C.S LANCONES",
+      "microred": 3,
+      "cod_distrito": "005-5",
+      "distrito": "DISTRITO LANCONES",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "07721",
+      "nombre": "P.S BLAS",
+      "microred": 3,
+      "cod_distrito": "005-5",
+      "distrito": "DISTRITO LANCONES",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02072",
+      "nombre": "P.S CASAS QUEMADAS",
+      "microred": 3,
+      "cod_distrito": "005-5",
+      "distrito": "DISTRITO LANCONES",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02068",
+      "nombre": "P.S CHILACO PELADOS",
+      "microred": 3,
+      "cod_distrito": "005-5",
+      "distrito": "DISTRITO LANCONES",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02070",
+      "nombre": "P.S CHORRERAS DE PULGUERAS",
+      "microred": 3,
+      "cod_distrito": "005-5",
+      "distrito": "DISTRITO LANCONES",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02065",
+      "nombre": "P.S EL ALAMOR",
+      "microred": 3,
+      "cod_distrito": "005-5",
+      "distrito": "DISTRITO LANCONES",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02067",
+      "nombre": "P.S EL PITAYO",
+      "microred": 3,
+      "cod_distrito": "005-5",
+      "distrito": "DISTRITO LANCONES",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02061",
+      "nombre": "P.S ENCUENTRO DE PILARES",
+      "microred": 3,
+      "cod_distrito": "005-5",
+      "distrito": "DISTRITO LANCONES",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "06709",
+      "nombre": "P.S ENCUENTRO DE ROMEROS",
+      "microred": 3,
+      "cod_distrito": "005-5",
+      "distrito": "DISTRITO LANCONES",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02063",
+      "nombre": "P.S HUASIMAL DE LA SOLANA",
+      "microred": 3,
+      "cod_distrito": "005-5",
+      "distrito": "DISTRITO LANCONES",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02062",
+      "nombre": "P.S JAHUAY NEGRO",
+      "microred": 3,
+      "cod_distrito": "005-5",
+      "distrito": "DISTRITO LANCONES",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02071",
+      "nombre": "P.S LA PEÑITA",
+      "microred": 3,
+      "cod_distrito": "005-5",
+      "distrito": "DISTRITO LANCONES",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02069",
+      "nombre": "P.S PILARES",
+      "microred": 3,
+      "cod_distrito": "005-5",
+      "distrito": "DISTRITO LANCONES",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02064",
+      "nombre": "P.S PLAYAS DE ROMERO",
+      "microred": 3,
+      "cod_distrito": "005-5",
+      "distrito": "DISTRITO LANCONES",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02066",
+      "nombre": "P.S QUEBRADA SECA",
+      "microred": 3,
+      "cod_distrito": "005-5",
+      "distrito": "DISTRITO LANCONES",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "07104",
+      "nombre": "P.S VENADOS",
+      "microred": 3,
+      "cod_distrito": "005-5",
+      "distrito": "DISTRITO LANCONES",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01932",
+      "nombre": "C.S LAS LOMAS",
+      "microred": 4,
+      "cod_distrito": "006-6",
+      "distrito": "DISTRITO LAS LOMAS",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "01934",
+      "nombre": "P.S CHIPILLICO",
+      "microred": 4,
+      "cod_distrito": "006-6",
+      "distrito": "DISTRITO LAS LOMAS",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "07173",
+      "nombre": "P.S CP5",
+      "microred": 4,
+      "cod_distrito": "006-6",
+      "distrito": "DISTRITO LAS LOMAS",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01935",
+      "nombre": "P.S EL SAUCE - LAS LOMAS",
+      "microred": 4,
+      "cod_distrito": "006-6",
+      "distrito": "DISTRITO LAS LOMAS",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01943",
+      "nombre": "C.S EL PARTIDOR",
+      "microred": 4,
+      "cod_distrito": "006-6",
+      "distrito": "DISTRITO LAS LOMAS",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "01942",
+      "nombre": "P.S GARABATOS",
+      "microred": 4,
+      "cod_distrito": "006-6",
+      "distrito": "DISTRITO LAS LOMAS",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01938",
+      "nombre": "P.S HUACHUMA ALTA",
+      "microred": 4,
+      "cod_distrito": "006-6",
+      "distrito": "DISTRITO LAS LOMAS",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01944",
+      "nombre": "P.S LA MENTA",
+      "microred": 4,
+      "cod_distrito": "006-6",
+      "distrito": "DISTRITO LAS LOMAS",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01936",
+      "nombre": "P.S PAMPA ELERA BAJA",
+      "microred": 4,
+      "cod_distrito": "006-6",
+      "distrito": "DISTRITO LAS LOMAS",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01937",
+      "nombre": "P.S PELINGARÁ",
+      "microred": 4,
+      "cod_distrito": "006-6",
+      "distrito": "DISTRITO LAS LOMAS",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "10421",
+      "nombre": "P.S PICHONES BAJO",
+      "microred": 4,
+      "cod_distrito": "006-6",
+      "distrito": "DISTRITO LAS LOMAS",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01933",
+      "nombre": "P.S POTRERILLO",
+      "microred": 4,
+      "cod_distrito": "006-6",
+      "distrito": "DISTRITO LAS LOMAS",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01941",
+      "nombre": "P.S PUERTA PULACHE",
+      "microred": 4,
+      "cod_distrito": "006-6",
+      "distrito": "DISTRITO LAS LOMAS",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01939",
+      "nombre": "P.S SAN FRANCISCO DE PAMPA ELERA",
+      "microred": 4,
+      "cod_distrito": "006-6",
+      "distrito": "DISTRITO LAS LOMAS",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01940",
+      "nombre": "P.S SANTA ELENA",
+      "microred": 4,
+      "cod_distrito": "006-6",
+      "distrito": "DISTRITO LAS LOMAS",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01945",
+      "nombre": "C.S SUYO",
+      "microred": 4,
+      "cod_distrito": "007-7",
+      "distrito": "DISTRITO SUYO",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "01946",
+      "nombre": "P.S CHIRINOS",
+      "microred": 4,
+      "cod_distrito": "007-7",
+      "distrito": "DISTRITO SUYO",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01954",
+      "nombre": "P.S LA LAGUNA",
+      "microred": 4,
+      "cod_distrito": "007-7",
+      "distrito": "DISTRITO SUYO",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01949",
+      "nombre": "P.S LA TIENDA",
+      "microred": 4,
+      "cod_distrito": "007-7",
+      "distrito": "DISTRITO SUYO",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01948",
+      "nombre": "P.S LA TINA",
+      "microred": 4,
+      "cod_distrito": "007-7",
+      "distrito": "DISTRITO SUYO",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01947",
+      "nombre": "P.S PAMPA LARGA GUITARRAS",
+      "microred": 4,
+      "cod_distrito": "007-7",
+      "distrito": "DISTRITO SUYO",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01952",
+      "nombre": "P.S PUENTE INTERNACIONAL",
+      "microred": 4,
+      "cod_distrito": "007-7",
+      "distrito": "DISTRITO SUYO",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01953",
+      "nombre": "P.S SANTA ANA DE QUIROZ",
+      "microred": 4,
+      "cod_distrito": "007-7",
+      "distrito": "DISTRITO SUYO",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01951",
+      "nombre": "P.S SARAYUYO",
+      "microred": 4,
+      "cod_distrito": "007-7",
+      "distrito": "DISTRITO SUYO",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01950",
+      "nombre": "P.S SURPAMPA",
+      "microred": 4,
+      "cod_distrito": "007-7",
+      "distrito": "DISTRITO SUYO",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01955",
+      "nombre": "C.S SAPILLICA",
+      "microred": 4,
+      "cod_distrito": "008-8",
+      "distrito": "DISTRITO SAPILLICA",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "01957",
+      "nombre": "P.S COLETAS DE CHACHACOMAL",
+      "microred": 4,
+      "cod_distrito": "008-8",
+      "distrito": "DISTRITO SAPILLICA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01958",
+      "nombre": "P.S EL SAUCE - SAPILLICA",
+      "microred": 4,
+      "cod_distrito": "008-8",
+      "distrito": "DISTRITO SAPILLICA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01956",
+      "nombre": "P.S TASAJERAS",
+      "microred": 4,
+      "cod_distrito": "008-8",
+      "distrito": "DISTRITO SAPILLICA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "33304",
+      "nombre": "P.S. CANALES",
+      "microred": 4,
+      "cod_distrito": "008-8",
+      "distrito": "DISTRITO SAPILLICA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02080",
+      "nombre": "C.S LOS ORGANOS",
+      "microred": 5,
+      "cod_distrito": "009-9",
+      "distrito": "DISTRITO LOS ORGANOS",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "02081",
+      "nombre": "P.S EL ÑURO",
+      "microred": 5,
+      "cod_distrito": "009-9",
+      "distrito": "DISTRITO LOS ORGANOS",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02082",
+      "nombre": "P.S EL ALTO",
+      "microred": 5,
+      "cod_distrito": "010-10",
+      "distrito": "DISTRITO EL ALTO",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02083",
+      "nombre": "P.S CABO BLANCO",
+      "microred": 5,
+      "cod_distrito": "010-10",
+      "distrito": "DISTRITO EL ALTO",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "06627",
+      "nombre": "C.S MANCORA",
+      "microred": 5,
+      "cod_distrito": "011-11",
+      "distrito": "DISTRITO MANCORA",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "02032",
+      "nombre": "C.S MARCAVELICA",
+      "microred": 6,
+      "cod_distrito": "012-12",
+      "distrito": "DISTRITO MARCAVELICA",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "02034",
+      "nombre": "P.S LA GOLONDRINA",
+      "microred": 6,
+      "cod_distrito": "012-12",
+      "distrito": "DISTRITO MARCAVELICA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02040",
+      "nombre": "P.S LA NORIA",
+      "microred": 6,
+      "cod_distrito": "012-12",
+      "distrito": "DISTRITO MARCAVELICA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02041",
+      "nombre": "P.S LA QUINTA",
+      "microred": 6,
+      "cod_distrito": "012-12",
+      "distrito": "DISTRITO MARCAVELICA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02035",
+      "nombre": "P.S MALLARES",
+      "microred": 6,
+      "cod_distrito": "012-12",
+      "distrito": "DISTRITO MARCAVELICA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02033",
+      "nombre": "P.S MALLARITOS",
+      "microred": 6,
+      "cod_distrito": "012-12",
+      "distrito": "DISTRITO MARCAVELICA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02036",
+      "nombre": "P.S MONTERON",
+      "microred": 6,
+      "cod_distrito": "012-12",
+      "distrito": "DISTRITO MARCAVELICA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02038",
+      "nombre": "P.S SAMAN",
+      "microred": 6,
+      "cod_distrito": "012-12",
+      "distrito": "DISTRITO MARCAVELICA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02037",
+      "nombre": "P.S TANGARARA",
+      "microred": 6,
+      "cod_distrito": "012-12",
+      "distrito": "DISTRITO MARCAVELICA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02039",
+      "nombre": "P.S VISTA FLORIDA",
+      "microred": 6,
+      "cod_distrito": "012-12",
+      "distrito": "DISTRITO MARCAVELICA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02049",
+      "nombre": "C.S TAMARINDO",
+      "microred": 6,
+      "cod_distrito": "013-13",
+      "distrito": "DISTRITO TAMARINDO",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "02047",
+      "nombre": "C.S AMOTAPE",
+      "microred": 6,
+      "cod_distrito": "014-14",
+      "distrito": "DISTRITO AMOTAPE",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02048",
+      "nombre": "P.S EL TAMBO",
+      "microred": 6,
+      "cod_distrito": "014-14",
+      "distrito": "DISTRITO AMOTAPE",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02042",
+      "nombre": "C.S IGNACIO ESCUDERO",
+      "microred": 6,
+      "cod_distrito": "015-15",
+      "distrito": "DISTRITO IGNACIO ESCUDERO",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "02044",
+      "nombre": "P.S MONTELIMA",
+      "microred": 6,
+      "cod_distrito": "015-15",
+      "distrito": "DISTRITO IGNACIO ESCUDERO",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02043",
+      "nombre": "P.S SAN JUAN DE LA VIRGEN",
+      "microred": 6,
+      "cod_distrito": "015-15",
+      "distrito": "DISTRITO IGNACIO ESCUDERO",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02046",
+      "nombre": "P.S SAN MIGUEL",
+      "microred": 6,
+      "cod_distrito": "015-15",
+      "distrito": "DISTRITO IGNACIO ESCUDERO",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02045",
+      "nombre": "P.S SANTA SOFIA",
+      "microred": 6,
+      "cod_distrito": "015-15",
+      "distrito": "DISTRITO IGNACIO ESCUDERO",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01959",
+      "nombre": "C.S PAIMAS",
+      "microred": 7,
+      "cod_distrito": "016-16",
+      "distrito": "DISTRITO PAIMAS",
+      "categoria": "I-4"
+    },
+    {
+      "codigo": "06790",
+      "nombre": "P.S JAMBUR",
+      "microred": 7,
+      "cod_distrito": "016-16",
+      "distrito": "DISTRITO PAIMAS",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01960",
+      "nombre": "P.S LA SAUCHA",
+      "microred": 7,
+      "cod_distrito": "016-16",
+      "distrito": "DISTRITO PAIMAS",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01961",
+      "nombre": "P.S TONDOPA",
+      "microred": 7,
+      "cod_distrito": "016-16",
+      "distrito": "DISTRITO PAIMAS",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01962",
+      "nombre": "C.S JILILI",
+      "microred": 7,
+      "cod_distrito": "017-17",
+      "distrito": "DISTRITO JILILI",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "01963",
+      "nombre": "P.S ANCHALAY",
+      "microred": 7,
+      "cod_distrito": "017-17",
+      "distrito": "DISTRITO JILILI",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01964",
+      "nombre": "P.S CUCUYAS",
+      "microred": 7,
+      "cod_distrito": "017-17",
+      "distrito": "DISTRITO JILILI",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01965",
+      "nombre": "C.S LAGUNAS",
+      "microred": 7,
+      "cod_distrito": "018-18",
+      "distrito": "DISTRITO LAGUNAS",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "01966",
+      "nombre": "P.S EL LUCUMO",
+      "microred": 7,
+      "cod_distrito": "018-18",
+      "distrito": "DISTRITO LAGUNAS",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01969",
+      "nombre": "P.S PILLO",
+      "microred": 7,
+      "cod_distrito": "018-18",
+      "distrito": "DISTRITO LAGUNAS",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01967",
+      "nombre": "P.S SALVIA",
+      "microred": 7,
+      "cod_distrito": "018-18",
+      "distrito": "DISTRITO LAGUNAS",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01968",
+      "nombre": "P.S SAN JUAN DE LAGUNAS",
+      "microred": 7,
+      "cod_distrito": "018-18",
+      "distrito": "DISTRITO LAGUNAS",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "33303",
+      "nombre": "P.S. ARRENDAMIENTO",
+      "microred": 7,
+      "cod_distrito": "018-18",
+      "distrito": "DISTRITO LAGUNAS",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01970",
+      "nombre": "C.S MONTERO",
+      "microred": 7,
+      "cod_distrito": "019-19",
+      "distrito": "DISTRITO MONTERO",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "01972",
+      "nombre": "P.S MARMAS ALTO",
+      "microred": 7,
+      "cod_distrito": "019-19",
+      "distrito": "DISTRITO MONTERO",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01973",
+      "nombre": "P.S QUEBRADA DE AGUA",
+      "microred": 7,
+      "cod_distrito": "019-19",
+      "distrito": "DISTRITO MONTERO",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01971",
+      "nombre": "P.S SICACATE",
+      "microred": 7,
+      "cod_distrito": "019-19",
+      "distrito": "DISTRITO MONTERO",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01974",
+      "nombre": "C.S SICCHEZ",
+      "microred": 7,
+      "cod_distrito": "020-20",
+      "distrito": "DISTRITO SICCHEZ",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "01976",
+      "nombre": "P.S AMBASAL",
+      "microred": 7,
+      "cod_distrito": "020-20",
+      "distrito": "DISTRITO SICCHEZ",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01975",
+      "nombre": "P.S OXAHUAY",
+      "microred": 7,
+      "cod_distrito": "020-20",
+      "distrito": "DISTRITO SICCHEZ",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02021",
+      "nombre": "HOSPITAL DE APOYO II-1 NUESTRA SRA DE LAS MERCEDES",
+      "microred": 8,
+      "cod_distrito": "021-21",
+      "distrito": "DISTRITO PAITA",
+      "categoria": "II-1"
+    },
+    {
+      "codigo": "02022",
+      "nombre": "P.S LA ISLILLA",
+      "microred": 8,
+      "cod_distrito": "021-21",
+      "distrito": "DISTRITO PAITA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02023",
+      "nombre": "P.S YACILA",
+      "microred": 8,
+      "cod_distrito": "021-21",
+      "distrito": "DISTRITO PAITA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "24958",
+      "nombre": "P.S JUAN VALER SANDOVAL",
+      "microred": 8,
+      "cod_distrito": "021-21",
+      "distrito": "DISTRITO PAITA",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "02025",
+      "nombre": "C.S EL ARENAL",
+      "microred": 8,
+      "cod_distrito": "022-22",
+      "distrito": "DISTRITO EL ARENAL",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "02027",
+      "nombre": "C.S LA HUACA",
+      "microred": 8,
+      "cod_distrito": "023-23",
+      "distrito": "DISTRITO LA HUACA",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "02028",
+      "nombre": "C.S VIVIATE",
+      "microred": 8,
+      "cod_distrito": "023-23",
+      "distrito": "DISTRITO LA HUACA",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "02030",
+      "nombre": "P.S MACACARA",
+      "microred": 8,
+      "cod_distrito": "023-23",
+      "distrito": "DISTRITO LA HUACA",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02029",
+      "nombre": "P.S NOMARA",
+      "microred": 8,
+      "cod_distrito": "023-23",
+      "distrito": "DISTRITO LA HUACA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02026",
+      "nombre": "C.S PUEBLO NUEVO DE COLAN",
+      "microred": 8,
+      "cod_distrito": "024-24",
+      "distrito": "DISTRITO PUEBLO NUEVO DE COLAN",
+      "categoria": "I-4"
+    },
+    {
+      "codigo": "02031",
+      "nombre": "P.S LA ISLA SAN LORENZO",
+      "microred": 8,
+      "cod_distrito": "024-24",
+      "distrito": "DISTRITO PUEBLO NUEVO DE COLAN",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02024",
+      "nombre": "P.S SAN LUCAS DE COLAN",
+      "microred": 8,
+      "cod_distrito": "024-24",
+      "distrito": "DISTRITO PUEBLO NUEVO DE COLAN",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02050",
+      "nombre": "C.S QUERECOTILLO",
+      "microred": 9,
+      "cod_distrito": "025-25",
+      "distrito": "DISTRITO QUERECOTILLO",
+      "categoria": "I-4"
+    },
+    {
+      "codigo": "02054",
+      "nombre": "P.S LA MARGARITA",
+      "microred": 9,
+      "cod_distrito": "025-25",
+      "distrito": "DISTRITO QUERECOTILLO",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02053",
+      "nombre": "P.S LA PEÑA - LA HORCA",
+      "microred": 9,
+      "cod_distrito": "025-25",
+      "distrito": "DISTRITO QUERECOTILLO",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02056",
+      "nombre": "P.S PUENTE DE LOS SERRANOS",
+      "microred": 9,
+      "cod_distrito": "025-25",
+      "distrito": "DISTRITO QUERECOTILLO",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02052",
+      "nombre": "P.S SAN FRANCISCO DE CHOCAN",
+      "microred": 9,
+      "cod_distrito": "025-25",
+      "distrito": "DISTRITO QUERECOTILLO",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02057",
+      "nombre": "P.S SANTA CRUZ",
+      "microred": 9,
+      "cod_distrito": "025-25",
+      "distrito": "DISTRITO QUERECOTILLO",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02055",
+      "nombre": "P.S SANTA VICTORIA",
+      "microred": 9,
+      "cod_distrito": "025-25",
+      "distrito": "DISTRITO QUERECOTILLO",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02058",
+      "nombre": "C.S SALITRAL",
+      "microred": 9,
+      "cod_distrito": "026-26",
+      "distrito": "DISTRITO SALITRAL",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "02059",
+      "nombre": "P.S MIRAFLORES",
+      "microred": 9,
+      "cod_distrito": "026-26",
+      "distrito": "DISTRITO SALITRAL",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02074",
+      "nombre": "C.S TALARA II",
+      "microred": 10,
+      "cod_distrito": "027-27",
+      "distrito": "DISTRITO PARIÑAS",
+      "categoria": "I-4"
+    },
+    {
+      "codigo": "02073",
+      "nombre": "C.S JOSE ABELARDO QUIÑONES",
+      "microred": 10,
+      "cod_distrito": "027-27",
+      "distrito": "DISTRITO PARIÑAS",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "07718",
+      "nombre": "P.S FELIPE SANTIAGO SALAVERRY",
+      "microred": 10,
+      "cod_distrito": "027-27",
+      "distrito": "DISTRITO PARIÑAS",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02075",
+      "nombre": "C.S NEGRITOS",
+      "microred": 10,
+      "cod_distrito": "028-28",
+      "distrito": "DISTRITO LA BREA",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "02076",
+      "nombre": "P.S SAN PABLO",
+      "microred": 10,
+      "cod_distrito": "028-28",
+      "distrito": "DISTRITO LA BREA",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02077",
+      "nombre": "P.S LOBITOS",
+      "microred": 10,
+      "cod_distrito": "029-29",
+      "distrito": "DISTRITO LOBITOS",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "02078",
+      "nombre": "C.S VICHAYAL",
+      "microred": 10,
+      "cod_distrito": "030-30",
+      "distrito": "DISTRITO VICHAYAL",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "02079",
+      "nombre": "P.S MIRAMAR",
+      "microred": 10,
+      "cod_distrito": "030-30",
+      "distrito": "DISTRITO VICHAYAL",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01977",
+      "nombre": "C.S TAMBOGRANDE",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-4"
+    },
+    {
+      "codigo": "01978",
+      "nombre": "C.S SAN ISIDRO",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-3"
+    },
+    {
+      "codigo": "01986",
+      "nombre": "P.S CHICA ALTA",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01996",
+      "nombre": "P.S CP3 - SAN MARTIN",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01997",
+      "nombre": "P.S CP4",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01979",
+      "nombre": "P.S CRUCETA",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01992",
+      "nombre": "P.S EL PORVENIR",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01998",
+      "nombre": "P.S GUARAGUAOS",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01999",
+      "nombre": "P.S LA GREDA",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "02000",
+      "nombre": "P.S LA RITA",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01985",
+      "nombre": "P.S LA PEÑITA",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01988",
+      "nombre": "P.S LAS MONICAS",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01991",
+      "nombre": "P.S LLOQUE YUPANQUI",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01981",
+      "nombre": "P.S MALINGAS",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01982",
+      "nombre": "P.S MALINGUITAS",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01994",
+      "nombre": "P.S OCOTO ALTO",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01990",
+      "nombre": "P.S PALOMINOS",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01983",
+      "nombre": "P.S PAPAYO - EL ALGARROBO",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01989",
+      "nombre": "P.S PEDREGAL",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01995",
+      "nombre": "P.S PROGRESO BAJO",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01984",
+      "nombre": "P.S SANTA ANA",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01987",
+      "nombre": "P.S SINCHI ROCA",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-2"
+    },
+    {
+      "codigo": "01980",
+      "nombre": "P.S TEJEDORES",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "01993",
+      "nombre": "P.S YAHUAR HUACA",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-1"
+    },
+    {
+      "codigo": "33302",
+      "nombre": "P.S. EL CONVENTO",
+      "microred": 11,
+      "cod_distrito": "031-31",
+      "distrito": "DISTRITO TAMBOGRANDE",
+      "categoria": "I-1"
+    }
+  ],
+  "productos": [
+    {
+      "codigo": "08068",
+      "nombre": "DISPOSITIVO INTRAUTERINO DE COBRE",
+      "tipo": "I",
+      "unidad": "UNIDAD"
+    },
+    {
+      "codigo": "33009",
+      "nombre": "DISPOSITIVO INTRAUTERINO CON LEVONORGESTREL 52 mg",
+      "tipo": "M",
+      "unidad": "UNIDAD"
+    },
+    {
+      "codigo": "03234",
+      "nombre": "ESTRADIOL CIPIONATO + MEDROXIPROGESTERONA ACETATO 0.5 mL 5 mg + 25 mg/0.5 mL",
+      "tipo": "M",
+      "unidad": "INYECTABLE"
+    },
+    {
+      "codigo": "18102",
+      "nombre": "ETINILESTRADIOL + LEVONORGESTREL (BLISTER) 21 tab + 7 tab SIN EFEC 30 µg + 150 µg",
+      "tipo": "M",
+      "unidad": "TABLETA"
+    },
+    {
+      "codigo": "03351",
+      "nombre": "ETONOGESTREL (IMPLANTE)  68 mg",
+      "tipo": "M",
+      "unidad": "UNIDAD"
+    },
+    {
+      "codigo": "38680",
+      "nombre": "LEVONORGESTREL BLISTER X 2 750 µg",
+      "tipo": "M",
+      "unidad": "TABLETA"
+    },
+    {
+      "codigo": "04594",
+      "nombre": "MEDROXIPROGESTERONA ACETATO 1 mL 150 mg/mL",
+      "tipo": "M",
+      "unidad": "INYECTABLE"
+    },
+    {
+      "codigo": "22030",
+      "nombre": "PRESERVATIVO FEMENINO",
+      "tipo": "I",
+      "unidad": "UNIDAD"
+    },
+    {
+      "codigo": "08054",
+      "nombre": "PRESERVATIVOS SIN NONOXINOL",
+      "tipo": "I",
+      "unidad": "UNIDAD"
+    },
+    {
+      "codigo": "22736",
+      "nombre": "PRUEBA RAPIDA DE HORMONA GONADOTROPINA CORIONICA (HCG) 1 DET",
+      "tipo": "I",
+      "unidad": "KIT"
+    },
+    {
+      "codigo": "31100",
+      "nombre": "PRUEBA RAPIDA PARA VIH 1-2 Y SIFILIS 1 DET",
+      "tipo": "I",
+      "unidad": "KIT"
+    },
+    {
+      "codigo": "39992",
+      "nombre": "PRUEBA RAPIDA PARA HEPATITIS B 1 DET",
+      "tipo": "I",
+      "unidad": "KIT"
+    },
+    {
+      "codigo": "17705",
+      "nombre": "PRUEBA RAPIDA PARA VIH 1-2 1 DET",
+      "tipo": "I",
+      "unidad": "KIT"
+    }
+  ]
+}

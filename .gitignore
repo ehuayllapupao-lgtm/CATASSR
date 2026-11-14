@@ -1,0 +1,7 @@
+CATASSR/config.local.php
+CATASSR/.installation.lock
+*.log
+*.sql.gz
+*.zip
+.DS_Store
+Thumbs.db

@@ -2,6 +2,12 @@
 
 Aplicativo local para PHP + MySQL/MariaDB + XAMPP. Primera etapa de administración y accesos.
 
+## Nuevo: usuarios automáticos
+
+[Descargar actualización](descargas/CATASSR_USUARIOS_AUTOMATICOS.zip) · [Instrucciones](ACTUALIZAR_USUARIOS_AUTOMATICOS.md)
+
+Al crear una cuenta, el administrador ingresa nombres y ambos apellidos. El usuario se genera en mayúsculas y sin tildes: inicial del primer nombre + apellido paterno + inicial del apellido materno. Si existe, se añade un número. Las cuentas existentes conservan sus accesos. No requiere migración de la base de datos.
+
 ## Nuevo: fechas de vencimiento
 
 [Descargar actualización de vencimientos](descargas/CATASSR_VENCIMIENTOS.zip) · [Instrucciones](ACTUALIZAR_VENCIMIENTOS.md)

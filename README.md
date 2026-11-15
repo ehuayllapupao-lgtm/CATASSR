@@ -2,6 +2,12 @@
 
 Aplicativo local para PHP + MySQL/MariaDB + XAMPP. Primera etapa de administración y accesos.
 
+## Nuevo: fechas de vencimiento
+
+[Descargar actualización de vencimientos](descargas/CATASSR_VENCIMIENTOS.zip) · [Instrucciones](ACTUALIZAR_VENCIMIENTOS.md)
+
+El administrador puede registrar y editar una fecha de vencimiento por medicamento o insumo. Los demás roles consultan fechas y estados. Incluye avisos de vencido, vence hoy y próximo a vencer en 30 días, con fecha de Lima. Los productos existentes quedan sin fecha registrada hasta que se ingrese una real. Esta versión registra una fecha por producto del catálogo; no controla lotes.
+
 ## Nuevo: apertura y cierre de periodos IMI
 
 [Descargar actualización de periodos](descargas/CATASSR_PERIODOS_IMI.zip) · [Instrucciones](ACTUALIZAR_PERIODOS_IMI.md)

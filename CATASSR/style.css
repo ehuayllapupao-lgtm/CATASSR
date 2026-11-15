@@ -2,3 +2,6 @@
 
 /* Informe IMI */
 .imi-wrap{max-height:70vh;overflow:auto}.imi-table{min-width:2350px}.imi-table th{position:sticky;top:0;z-index:2;white-space:normal;min-width:115px}.imi-table th:nth-child(3){min-width:290px}.imi-table th.manual{background:#007f86}.imi-table td.manual{background:#e5f6f1}.imi-table td[data-result]{background:#eef4fd}.imi-table input{width:105px;margin:0;font-weight:600}.imi-error td{background:#ffe3e7!important}.imi-heading{padding:20px 22px 0}.imi-table td{vertical-align:middle} @media print{aside,header,footer,button,form.filters,details,.filters{display:none!important}main{margin:0}.content{padding:0}.imi-wrap{max-height:none;overflow:visible}.imi-table{min-width:0;font-size:7px}.imi-table th{position:static;font-size:7px;min-width:0!important;padding:3px}.imi-table td{padding:3px}.imi-table input{width:45px;border:0;font-size:8px;padding:0}.card{box-shadow:none} @page{size:A3 landscape;margin:10mm}}
+
+/* Alinear las filas del formulario de usuarios */
+.user-form{align-items:start}.user-form .username-help{grid-column:1 / -1;margin:0 0 18px;font-size:12px}

@@ -11,3 +11,20 @@ if(userForm){
  for(const name of ['nombres','apellido_paterno','apellido_materno'])field(name).addEventListener('input',update);
  update();
 }
+
+// An establishment officer can additionally consult the assigned micro-network.
+const accessForm=document.querySelector('.user-form');
+if(accessForm){
+ const role=accessForm.querySelector('[name="rol"]');
+ const extra=accessForm.querySelector('[name="cabecera_microred"]');
+ const micro=accessForm.querySelector('[name="microred_id"]');
+ const establishment=accessForm.querySelector('[name="establecimiento_id"]');
+ const extraLabel=accessForm.querySelector('[data-double-role]');
+ const syncAccess=()=>{
+  const isEst=role.value==='establecimiento';
+  extraLabel.hidden=!isEst;extra.disabled=!isEst;
+  micro.disabled=!(role.value==='microred'||(isEst&&extra.checked));micro.required=!micro.disabled;
+  establishment.disabled=!isEst;establishment.required=isEst;
+ };
+ role.addEventListener('change',syncAccess);extra.addEventListener('change',syncAccess);syncAccess();
+}

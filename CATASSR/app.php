@@ -12,9 +12,25 @@ function go(string $url='index.php'): void {header('Location: '.$url);exit;}
 function token(): string {if(empty($_SESSION['csrf'])) $_SESSION['csrf']=bin2hex(random_bytes(32));return '<input type="hidden" name="csrf" value="'.e($_SESSION['csrf']).'">';}
 function csrf(): void {if(!hash_equals($_SESSION['csrf']??'',(string)($_POST['csrf']??'')) || empty($_SESSION['csrf'])) {http_response_code(403);exit('Solicitud vencida. Recargue la página.');}}
 $roles=['admin'=>'Administrador','tecnico'=>'Equipo técnico','microred'=>'Cabecera de microred','establecimiento'=>'Encargada/o de establecimiento'];
+function usuario_rol_etiqueta(array $u): string {
+ global $roles;
+ return $u['rol']==='establecimiento'&&!empty($u['microred_id'])?'Encargada/o de establecimiento y cabecera de microred':($roles[$u['rol']]??'Sin acceso');
+}
+function usuario_ambito(array $u): array {
+ if(in_array($u['rol'],['admin','tecnico'],true))return ['1=1',[]];
+ if($u['rol']==='microred')return ['e.microred_id=?',[$u['microred_id']??0]];
+ if($u['rol']==='establecimiento'){
+  if(!empty($u['microred_id']))return ['(e.id=? OR e.microred_id=?)',[$u['establecimiento_id']??0,$u['microred_id']]];
+  return ['e.id=?',[$u['establecimiento_id']??0]];
+ }
+ return ['1=0',[]];
+}
+function usuario_puede_ingresar_imi(array $u,int $eid): bool {
+ return $u['rol']==='admin'||($u['rol']==='establecimiento'&&$eid>0&&(int)($u['establecimiento_id']??0)===$eid);
+}
 function top(string $title,?array $u=null): void {global $roles; ?>
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title><?=e($title)?> · CATASSR</title><link rel="stylesheet" href="style.css"></head><body>
-<?php if($u): ?><aside><a class="brand" href="index.php">✚ CATASSR</a><div class="profile"><div class="avatar"><?=e(strtoupper(substr($u['nombre'],0,1)))?></div><strong><?=e($u['nombre'])?></strong><small><?=e($roles[$u['rol']])?></small></div><nav><a href="index.php">▦ &nbsp; Panel principal</a><a href="index.php?page=microredes">◎ &nbsp; Microredes</a><a href="index.php?page=establecimientos">✚ &nbsp; Establecimientos</a><a href="index.php?page=productos">▤ &nbsp; Medicamentos e insumos</a><a href="imi.php">▤ &nbsp; IMI</a><?php if($u['rol']==='admin'):?><a href="periodos_imi.php">◷ &nbsp; Periodos IMI</a><a href="index.php?page=usuarios">♙ &nbsp; Usuarios y accesos</a><?php endif;?></nav><form method="post" action="index.php"><input type="hidden" name="action" value="logout"><?=token()?><button class="exit">Cerrar sesión</button></form><small class="aside-foot">Salud sexual y reproductiva<br>Gestión de establecimientos</small></aside><?php endif;?>
-<main class="<?=$u?'':'guest'?>"><?php if($u):?><header><span>RED DE SALUD · GESTIÓN INSTITUCIONAL</span><span class="pill"><?=e($roles[$u['rol']])?></span></header><?php endif;?><div class="content"><h1><?=e($title)?></h1>
+<?php if($u): ?><aside><a class="brand" href="index.php">✚ CATASSR</a><div class="profile"><div class="avatar"><?=e(strtoupper(substr($u['nombre'],0,1)))?></div><strong><?=e($u['nombre'])?></strong><small><?=e(usuario_rol_etiqueta($u))?></small></div><nav><a href="index.php">▦ &nbsp; Panel principal</a><a href="index.php?page=microredes">◎ &nbsp; Microredes</a><a href="index.php?page=establecimientos">✚ &nbsp; Establecimientos</a><a href="index.php?page=productos">▤ &nbsp; Medicamentos e insumos</a><a href="imi.php">▤ &nbsp; IMI</a><?php if($u['rol']==='admin'):?><a href="periodos_imi.php">◷ &nbsp; Periodos IMI</a><a href="index.php?page=usuarios">♙ &nbsp; Usuarios y accesos</a><?php endif;?></nav><form method="post" action="index.php"><input type="hidden" name="action" value="logout"><?=token()?><button class="exit">Cerrar sesión</button></form><small class="aside-foot">Salud sexual y reproductiva<br>Gestión de establecimientos</small></aside><?php endif;?>
+<main class="<?=$u?'':'guest'?>"><?php if($u):?><header><span>RED DE SALUD · GESTIÓN INSTITUCIONAL</span><span class="pill"><?=e(usuario_rol_etiqueta($u))?></span></header><?php endif;?><div class="content"><h1><?=e($title)?></h1>
 <?php }
 function bottom(): void {echo '</div><footer>CATASSR · Administración e informes mensuales</footer></main></body></html>';}

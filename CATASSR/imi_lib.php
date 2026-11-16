@@ -3,9 +3,7 @@
 const IMI_COBERTURA=3;
 function imi_ready(PDO $d): bool {try{q($d,'SELECT 1 FROM imi_detalles LIMIT 1');q($d,'SELECT 1 FROM imi_reportes LIMIT 1');q($d,'SELECT 1 FROM imi_apertura LIMIT 1');q($d,'SELECT 1 FROM imi_periodos LIMIT 1');return true;}catch(PDOException $ex){return false;}}
 function imi_establecimientos(PDO $d,array $u): array {
- $where='1=1';$args=[];
- if($u['rol']==='microred'){$where='e.microred_id=?';$args=[$u['microred_id']??0];}
- if($u['rol']==='establecimiento'){$where='e.id=?';$args=[$u['establecimiento_id']??0];}
+ [$where,$args]=usuario_ambito($u);
  return q($d,'SELECT e.*,m.nombre microred FROM establecimientos e JOIN microredes m ON m.id=e.microred_id WHERE '.$where.' ORDER BY e.nombre',$args)->fetchAll();
 }
 function imi_num($value): int {if(!is_scalar($value)||!preg_match('/^\d{1,9}$/',(string)$value))throw new RuntimeException('Ingrese cantidades enteras entre 0 y 999999999 en los cuatro campos de cada producto.');return (int)$value;}

@@ -2,6 +2,12 @@
 
 Aplicativo local para PHP + MySQL/MariaDB + XAMPP. Primera etapa de administración y accesos.
 
+## Nuevo: doble función en una cuenta
+
+[Descargar actualización](descargas/CATASSR_DOBLE_FUNCION.zip) · [Instrucciones](ACTUALIZAR_DOBLE_FUNCION.md)
+
+Una persona puede ser encargada de establecimiento y cabecera de microred con una sola cuenta. Registra únicamente el IMI de su establecimiento y consulta la microred asignada. Se configura en Usuarios y accesos mediante la opción También es cabecera de microred. No requiere migración de base de datos.
+
 ## Nuevo: usuarios automáticos
 
 [Descargar actualización](descargas/CATASSR_USUARIOS_AUTOMATICOS.zip) · [Instrucciones](ACTUALIZAR_USUARIOS_AUTOMATICOS.md)

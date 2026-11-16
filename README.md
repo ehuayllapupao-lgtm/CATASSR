@@ -2,6 +2,12 @@
 
 Aplicativo local para PHP + MySQL/MariaDB + XAMPP. Primera etapa de administración y accesos.
 
+## Nuevo: acceso a WhatsApp desde la ficha
+
+[Descargar actualización](descargas/CATASSR_WHATSAPP_FICHA.zip) · [Instrucciones](ACTUALIZAR_WHATSAPP_FICHA.md)
+
+La ficha del responsable incluye un icono de WhatsApp junto a los teléfonos registrados con formato válido. Abre el chat a petición del usuario y no envía mensajes automáticamente. No requiere cambios de base de datos.
+
 ## Nuevo: teléfonos y correo de usuarios
 
 [Descargar actualización](descargas/CATASSR_CONTACTOS_USUARIOS.zip) · [Instrucciones](ACTUALIZAR_CONTACTOS_USUARIOS.md)

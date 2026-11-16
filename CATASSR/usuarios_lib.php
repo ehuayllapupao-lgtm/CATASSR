@@ -54,3 +54,16 @@ function usuarios_contacto(array $input,array $old=[]): array {
  }
  return $contact;
 }
+function usuarios_whatsapp_url(?string $phone): ?string {
+ $phone=trim($phone??'');
+ if($phone===''||strlen($phone)>30||!preg_match('/^\+?[0-9 ()-]+$/',$phone))return null;
+ $digits=preg_replace('/\D/','',$phone);
+ if(strncmp($phone,'+',1)===0){$international=$digits;}
+ elseif(strncmp($digits,'00',2)===0){$international=substr($digits,2);}
+ elseif(preg_match('/^9\d{8}$/',$digits)){$international='51'.$digits;}
+ elseif(preg_match('/^0[1-8]\d{6,7}$/',$digits)){$international='51'.substr($digits,1);}
+ elseif(preg_match('/^[1-8]\d{7}$/',$digits)){$international='51'.$digits;}
+ elseif(preg_match('/^51\d{8,9}$/',$digits)){$international=$digits;}
+ else return null;
+ return preg_match('/^[1-9]\d{7,14}$/',$international)?'https://wa.me/'.$international:null;
+}

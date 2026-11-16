@@ -33,7 +33,19 @@ if(fichaDialog){
    const response=await fetch(link.href,{headers:{Accept:'application/json'},credentials:'same-origin',signal:request.signal,cache:'no-store'});
    const payload=await response.json();if(request.signal.aborted)return;
    if(!response.ok){const error=new Error(payload.error||'No se pudo cargar la ficha.');error.userMessage=true;throw error;}
-   for(const [label,value] of Object.entries(payload.datos)){const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=value;data.append(dt,dd);}
+   for(const [label,value] of Object.entries(payload.datos)){
+    const dt=document.createElement('dt'),dd=document.createElement('dd'),contact=document.createElement('span'),text=document.createElement('span');
+    dt.textContent=label;contact.className='ficha-contacto';text.textContent=value;contact.append(text);
+    const wa=payload.whatsapp?.[label];
+    if(typeof wa==='string'&&/^https:\/\/wa\.me\/[1-9]\d{7,14}$/.test(wa)){
+     const link=document.createElement('a');link.href=wa;link.className='ficha-wa';link.target='_blank';link.rel='noopener noreferrer';link.title='Abrir WhatsApp para '+value;link.setAttribute('aria-label','Abrir chat de WhatsApp para '+label+': '+value);
+     const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+     for(const [attr,v] of Object.entries({viewBox:'0 0 24 24',width:'20',height:'20',fill:'none',stroke:'currentColor','stroke-width':'1.8','aria-hidden':'true',focusable:'false'}))svg.setAttribute(attr,v);
+     for(const d of ['M21 11.5a9 9 0 0 1-13.4 7.9L3 21l1.6-4.6A9 9 0 1 1 21 11.5Z','m8 7 2 3-1.2 1.2c.8 1.5 2 2.7 3.5 3.5l1.2-1.2 3 2c-1.2 3.6-10.6-1.5-10-6.8C6.6 7.9 7.2 7.3 8 7Z']){const path=document.createElementNS('http://www.w3.org/2000/svg','path');path.setAttribute('d',d);svg.append(path);}
+     link.append(svg);contact.append(link);
+    }
+    dd.append(contact);data.append(dt,dd);
+   }
    status.textContent='Datos registrados del responsable.';
   }catch(error){if(error.name!=='AbortError'&&!request.signal.aborted)status.textContent=error.userMessage?error.message:'No se pudo cargar la ficha. Intente nuevamente.';}
  });

@@ -2,6 +2,12 @@
 
 Aplicativo local para PHP + MySQL/MariaDB + XAMPP. Primera etapa de administración y accesos.
 
+## Nuevo: búsqueda y ficha del responsable
+
+[Descargar actualización](descargas/CATASSR_BUSQUEDA_FICHA.zip) · [Instrucciones](ACTUALIZAR_FICHA_RESPONSABLE.md)
+
+La búsqueda de establecimientos ofrece sugerencias y filtra la tabla mientras escribes. La columna Ver ficha abre los datos registrados del responsable en una ventana. Ambas funciones respetan el ámbito de consulta de la cuenta. No requiere cambios en la base de datos.
+
 ## Nuevo: doble función en una cuenta
 
 [Descargar actualización](descargas/CATASSR_DOBLE_FUNCION.zip) · [Instrucciones](ACTUALIZAR_DOBLE_FUNCION.md)

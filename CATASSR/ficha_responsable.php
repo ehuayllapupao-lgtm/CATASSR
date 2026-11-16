@@ -1,5 +1,5 @@
 <?php
-require __DIR__.'/app.php';
+require __DIR__.'/app.php';require __DIR__.'/usuarios_lib.php';
 $json=strpos($_SERVER['HTTP_ACCEPT']??'','application/json')!==false;
 function ficha_responder(array $payload,int $status,?array $u=null): void {
  global $json;http_response_code($status);
@@ -16,10 +16,11 @@ try{
  $id=$_GET['establecimiento_id']??'';
  if(!is_string($id)||!preg_match('/^[1-9]\d{0,8}$/',$id))ficha_responder(['error'=>'Establecimiento no válido.'],422,$u);
  [$scope,$args]=usuario_ambito($u);
+ $contactSelect=usuarios_contacto_ready($d)?'u.telefono_1,u.telefono_2,u.correo,':'NULL telefono_1,NULL telefono_2,NULL correo,';
  // Explicit public profile fields; no passwords, hashes, lock information or other accounts.
- $x=q($d,'SELECT e.codigo,e.nombre establecimiento,e.distrito,e.categoria,m.nombre microred,u.nombre responsable,u.usuario,u.rol,u.activo,u.microred_id microred_supervision_id,s.nombre microred_supervision FROM establecimientos e JOIN microredes m ON m.id=e.microred_id JOIN usuarios u ON u.establecimiento_id=e.id LEFT JOIN microredes s ON s.id=u.microred_id WHERE e.id=? AND '.$scope,array_merge([(int)$id],$args))->fetch();
+ $x=q($d,'SELECT '.$contactSelect.'e.codigo,e.nombre establecimiento,e.distrito,e.categoria,m.nombre microred,u.nombre responsable,u.usuario,u.rol,u.activo,u.microred_id microred_supervision_id,s.nombre microred_supervision FROM establecimientos e JOIN microredes m ON m.id=e.microred_id JOIN usuarios u ON u.establecimiento_id=e.id LEFT JOIN microredes s ON s.id=u.microred_id WHERE e.id=? AND '.$scope,array_merge([(int)$id],$args))->fetch();
  if(!$x)ficha_responder(['error'=>'No hay una ficha de responsable disponible para este establecimiento en su ámbito.'],404,$u);
- $data=['Nombre completo'=>$x['responsable'],'Usuario'=>$x['usuario'],'Funciones'=>usuario_rol_etiqueta(['rol'=>$x['rol'],'microred_id'=>$x['microred_supervision_id']]),'Estado de cuenta'=>$x['activo']?'Activa':'Inactiva','Establecimiento'=>$x['establecimiento'],'Código del establecimiento'=>$x['codigo'],'Microred del establecimiento'=>$x['microred'],'Distrito'=>$x['distrito'],'Categoría'=>$x['categoria']];
+ $data=['Nombre completo'=>$x['responsable'],'Usuario'=>$x['usuario'],'Número telefónico 1'=>$x['telefono_1']??'Sin registrar','Número telefónico 2'=>$x['telefono_2']??'Sin registrar','Correo'=>$x['correo']??'Sin registrar','Funciones'=>usuario_rol_etiqueta(['rol'=>$x['rol'],'microred_id'=>$x['microred_supervision_id']]),'Estado de cuenta'=>$x['activo']?'Activa':'Inactiva','Establecimiento'=>$x['establecimiento'],'Código del establecimiento'=>$x['codigo'],'Microred del establecimiento'=>$x['microred'],'Distrito'=>$x['distrito'],'Categoría'=>$x['categoria']];
  if($x['rol']==='microred'||($x['rol']==='establecimiento'&&$x['microred_supervision_id']))$data['Microred que supervisa']=$x['microred_supervision']??'Sin asignar';
  ficha_responder(['datos'=>$data],200,$u);
 }catch(Throwable $ex){error_log($ex->getMessage());ficha_responder(['error'=>'No se pudo cargar la ficha. Intente nuevamente.'],500,$u??null);}

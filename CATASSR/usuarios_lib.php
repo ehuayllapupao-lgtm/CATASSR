@@ -23,15 +23,34 @@ function usuarios_identidad(array $input): array {
  if(strlen($base)>75)throw new RuntimeException('El apellido paterno es demasiado largo para generar el usuario.');
  return ['nombre'=>$nombre,'base'=>$base];
 }
-function usuarios_crear(PDO $d,array $identity,string $hash,string $role,?int $mid,?int $eid,int $active): string {
+function usuarios_crear(PDO $d,array $identity,string $hash,string $role,?int $mid,?int $eid,int $active,array $contact=[]): string {
  for($i=0;$i<10000;$i++){
   $login=$identity['base'].($i===0?'':(string)$i);
   if(q($d,'SELECT id FROM usuarios WHERE usuario=?',[$login])->fetch())continue;
-  try{q($d,'INSERT INTO usuarios(nombre,usuario,clave,rol,microred_id,establecimiento_id,activo) VALUES(?,?,?,?,?,?,?)',[$identity['nombre'],$login,$hash,$role,$mid,$eid,$active]);return $login;}
+  try{q($d,'INSERT INTO usuarios(nombre,usuario,clave,rol,microred_id,establecimiento_id,activo,telefono_1,telefono_2,correo) VALUES(?,?,?,?,?,?,?,?,?,?)',[$identity['nombre'],$login,$hash,$role,$mid,$eid,$active,$contact['telefono_1']??null,$contact['telefono_2']??null,$contact['correo']??null]);return $login;}
   catch(PDOException $ex){
    // Retry only a username collision, including simultaneous submissions.
    if((int)($ex->errorInfo[1]??0)!==1062 || !q($d,'SELECT id FROM usuarios WHERE usuario=?',[$login])->fetch())throw $ex;
   }
  }
  throw new RuntimeException('No se pudo asignar un usuario disponible. Contacte al administrador.');
+}
+function usuarios_contacto_ready(PDO $d): bool {
+ try{q($d,'SELECT telefono_1,telefono_2,correo FROM usuarios LIMIT 0');return true;}catch(PDOException $ex){return false;}
+}
+function usuarios_contacto(array $input,array $old=[]): array {
+ $contact=[];
+ foreach(['telefono_1'=>'Número telefónico 1','telefono_2'=>'Número telefónico 2','correo'=>'Correo'] as $key=>$label){
+  $raw=$input[$key]??$old[$key]??'';
+  if(!is_string($raw))throw new RuntimeException('Revise '.$label.'.');
+  $value=trim($raw);if($value===''){$contact[$key]=null;continue;}
+  if($key==='correo'){
+   if(strlen($value)>254||!filter_var($value,FILTER_VALIDATE_EMAIL))throw new RuntimeException('Ingrese un correo electrónico válido.');
+  }else{
+   $digits=preg_replace('/\D/','',$value);
+   if(strlen($value)>30||!preg_match('/^\+?[0-9 ()-]+$/',$value)||strlen($digits)<7||strlen($digits)>15)throw new RuntimeException($label.': ingrese entre 7 y 15 dígitos; puede usar +, espacios, paréntesis o guiones.');
+  }
+  $contact[$key]=$value;
+ }
+ return $contact;
 }

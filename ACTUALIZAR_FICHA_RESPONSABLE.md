@@ -28,7 +28,7 @@ Puedes cerrar con Cerrar, Escape o al pulsar fuera de la ventana. Si el navegado
 
 Donde no hay responsable asignado se muestra **Sin responsable**, sin abrir fichas vacías. Una cuenta inactiva continúa apareciendo como responsable asignado y su ficha indica que está inactiva.
 
-La ficha usa exclusivamente los datos existentes. No incluye DNI, teléfono, correo o dirección porque esos campos todavía no están registrados en CATASSR. No inventa información ni modifica las cuentas.
+La ficha usa exclusivamente los datos existentes. Tras habilitar la actualización de contactos, también muestra Número telefónico 1, Número telefónico 2 y Correo. Los datos ausentes se indican como Sin registrar. DNI y dirección aún no forman parte del registro. La ficha no modifica las cuentas.
 
 ## Permisos
 

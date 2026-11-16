@@ -2,6 +2,12 @@
 
 Aplicativo local para PHP + MySQL/MariaDB + XAMPP. Primera etapa de administración y accesos.
 
+## Nuevo: teléfonos y correo de usuarios
+
+[Descargar actualización](descargas/CATASSR_CONTACTOS_USUARIOS.zip) · [Instrucciones](ACTUALIZAR_CONTACTOS_USUARIOS.md)
+
+El administrador puede registrar dos teléfonos y un correo opcionales al crear o editar usuarios. También se muestran en la ficha del responsable dentro del ámbito de la cuenta. Las instalaciones existentes deben ejecutar actualizar_contactos.php una vez, conservando los datos actuales.
+
 ## Nuevo: búsqueda y ficha del responsable
 
 [Descargar actualización](descargas/CATASSR_BUSQUEDA_FICHA.zip) · [Instrucciones](ACTUALIZAR_FICHA_RESPONSABLE.md)

@@ -2,6 +2,12 @@
 
 Aplicativo local para PHP + MySQL/MariaDB + XAMPP. Primera etapa de administración y accesos.
 
+## Nuevo: Distribuciones y almacén general
+
+[Descargar actualización](descargas/CATASSR_DISTRIBUCIONES.zip) · [Guía de uso y cálculos](ACTUALIZAR_DISTRIBUCIONES.md)
+
+Programación por establecimiento y medicamento con cobertura de 3 a 6 meses, indicadores según la rúbrica, borradores, cantidades decididas por el administrador, inventario y movimientos del almacén. El cierre registra las salidas de todos los productos de forma conjunta. Se utilizan IMI enviados y se concilian las entregas pendientes para evitar sugerencias duplicadas.
+
 ## Nuevo: acceso a WhatsApp desde la ficha
 
 [Descargar actualización](descargas/CATASSR_WHATSAPP_FICHA.zip) · [Instrucciones](ACTUALIZAR_WHATSAPP_FICHA.md)

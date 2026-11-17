@@ -15,8 +15,9 @@ La actualización agrega la tabla que relaciona cada programación con sus área
 
 - **Estrategia sanitaria:** siempre **PROGRAMA 002 SALUD MATERNO NEONATAL**. Se muestra como solo lectura y se fija también en el servidor; el navegador no puede sustituirla por otra.
 - **Área:** marca una o varias de estas opciones: **PLANIFICACION FAMILIAR**, **INSUMOS**, **INSTRUMENTOS MEDICOS** y **MEDICAMENTOS**. Debe elegirse al menos una.
-- **Fecha de conclusión:** al iniciar aparece pendiente. Se registra automáticamente con la fecha actual de Lima al confirmar el cierre de toda la programación. No se puede anticipar ni alterar enviando una fecha desde el navegador.
-- **Botón de inicio:** ahora dice **Iniciar creación**. Inicia la programación en borrador; no descuenta stock ni registra una fecha de conclusión.
+- **Fecha actual:** aparece automáticamente en hora de Lima, encima de Proyección de meses y como solo lectura.
+- **Fecha de conclusión:** durante el borrador figura pendiente en el resumen de la programación. Se registra automáticamente con la fecha actual de Lima al confirmar el cierre de toda la programación. No se puede anticipar ni alterar enviando una fecha desde el navegador.
+- **Botón de inicio:** ahora dice **Iniciar distribución**. Inicia la programación en borrador; no descuenta stock ni registra una fecha de conclusión.
 
 Se mantienen el año, el número de distribución, la proyección de 3 a 6 meses y el análisis por medicamento y establecimiento.
 

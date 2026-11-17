@@ -4,6 +4,10 @@ Aplicativo local para PHP + MySQL/MariaDB + XAMPP. Primera etapa de administraci
 
 ## Nuevo: Distribuciones y almacén general
 
+[Actualizar configuración de Distribuciones](descargas/CATASSR_CONFIG_DISTRIBUCIONES.zip) · [Guía de estrategia, áreas y fecha](ACTUALIZAR_CONFIG_DISTRIBUCIONES.md)
+
+Al iniciar una nueva programación, la estrategia es fija (PROGRAMA 002 SALUD MATERNO NEONATAL), se pueden marcar varias de las cuatro áreas definidas y la fecha de conclusión se registra al cierre. El botón inicial se llama Iniciar creación.
+
 [Actualizar menú y ubicación del almacén](descargas/CATASSR_MENU_ALMACEN.zip) · [Instrucciones](ACTUALIZAR_MENU_ALMACEN.md)
 
 [Actualizar la pantalla simplificada](descargas/CATASSR_LIMPIEZA_DISTRIBUCIONES.zip) · [Detalles del cambio visual](ACTUALIZAR_PANTALLA_DISTRIBUCIONES.md)

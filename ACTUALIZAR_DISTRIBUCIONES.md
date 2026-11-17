@@ -26,11 +26,11 @@ El inventario es general por medicamento o insumo, compartido entre estrategias 
 En **Programaciones**, puedes seleccionar una distribución existente por número/año o crear una nueva:
 
 - Año y número de distribución (001 a 999, único dentro de ese año).
-- Estrategia sanitaria.
-- Área.
+- Estrategia sanitaria fija: PROGRAMA 002 SALUD MATERNO NEONATAL.
+- Una o varias áreas: PLANIFICACION FAMILIAR, INSUMOS, INSTRUMENTOS MEDICOS y MEDICAMENTOS.
 - Proyección de **3, 4, 5 o 6 meses**.
 
-En **Estrategias y áreas**, el administrador puede agregar nombres. Se ofrecen como punto de partida Planificación Familiar, el programa materno neonatal del ejemplo y las áreas General, Hemocure y Hemocontrol. Son etiquetas configurables; no asignan automáticamente establecimientos a esos grupos ni separan inventarios.
+El formulario de nuevas programaciones utiliza la estrategia fija y las cuatro áreas indicadas; permite marcar varias mediante casillas. Son categorías de la programación, no separan el inventario ni asignan establecimientos automáticamente. Pulsa **Iniciar creación** para comenzar el borrador. La fecha se muestra pendiente y se registra al cierre. Las programaciones anteriores mantienen sus datos históricos. Consulta ACTUALIZAR_CONFIG_DISTRIBUCIONES.md para habilitar las áreas múltiples.
 
 Una programación puede incluir varios medicamentos. Selecciona el producto para analizar los establecimientos uno por uno.
 

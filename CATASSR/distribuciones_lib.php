@@ -1,5 +1,14 @@
 <?php
-function dist_ready(PDO $d): bool {try{foreach(['dist_control','dist_estrategias','dist_areas','dist_almacen','dist_programaciones','dist_detalles','dist_movimientos','imi_reportes','imi_detalles'] as $t)q($d,'SELECT 1 FROM '.$t.' LIMIT 1');return (bool)q($d,'SELECT id FROM dist_control WHERE id=1')->fetch();}catch(PDOException $ex){return false;}}
+const DIST_ESTRATEGIA_FIJA='PROGRAMA 002 SALUD MATERNO NEONATAL';
+const DIST_AREAS_FIJAS=['PLANIFICACION FAMILIAR','INSUMOS','INSTRUMENTOS MEDICOS','MEDICAMENTOS'];
+function dist_areas_opciones(PDO $d): array {
+ $out=[];foreach(DIST_AREAS_FIJAS as $name){$id=q($d,'SELECT id FROM dist_areas WHERE nombre=?',[$name])->fetchColumn();if($id)$out[]=['id'=>(int)$id,'nombre'=>$name];}return $out;
+}
+function dist_valid_areas($input,array $options): array {
+ if(!is_array($input)||!$input||count($input)>4)throw new RuntimeException('Seleccione al menos una de las cuatro áreas.');
+ $allowed=array_column($options,'id');$ids=[];foreach($input as $raw){$id=dist_int($raw,1);if(!in_array($id,$allowed,true))throw new RuntimeException('Área no válida. Seleccione únicamente las áreas disponibles.');$ids[$id]=$id;}return array_values($ids);
+}
+function dist_ready(PDO $d): bool {try{foreach(['dist_control','dist_programacion_areas','dist_estrategias','dist_areas','dist_almacen','dist_programaciones','dist_detalles','dist_movimientos','imi_reportes','imi_detalles'] as $t)q($d,'SELECT 1 FROM '.$t.' LIMIT 1');return (bool)q($d,'SELECT id FROM dist_control WHERE id=1')->fetch()&&count(dist_areas_opciones($d))===4&&(bool)q($d,'SELECT id FROM dist_estrategias WHERE nombre=?',[DIST_ESTRATEGIA_FIJA])->fetch();}catch(PDOException $ex){return false;}}
 function dist_int($v,int $min=0,int $max=999999999): int {if(!is_scalar($v)||!preg_match('/^\d{1,12}$/',(string)$v)||(int)$v<$min||(int)$v>$max)throw new RuntimeException('Cantidad o selección no válida.');return (int)$v;}
 function dist_text($v,int $max=250,bool $required=false): string {if(!is_string($v))throw new RuntimeException('Texto no válido.');$v=trim($v);if(($required&&$v==='')||preg_match_all('/./us',$v)>$max)throw new RuntimeException('Complete el texto requerido y respete el tamaño máximo.');return $v;}
 function dist_num($v): string {return $v===null?'Sin información':number_format((float)$v,is_float($v)||strpos((string)$v,'.')!==false?2:0,'.',',');}

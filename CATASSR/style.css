@@ -24,3 +24,6 @@
 
 /* Configuración de la programación de distribuciones */
 .dist-create{align-items:start}.dist-area-fields{grid-column:1 / -1;border:1px solid #dce6ee;border-radius:10px;padding:14px 18px;margin:0 0 18px;min-width:0}.dist-area-fields legend{font-size:13px;font-weight:600;padding:0 8px}.dist-area-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 22px}.dist-area-options .check{margin:0;padding:8px;border-radius:6px;background:#f3f8fb}.dist-create .dist-start{grid-column:1 / -1} @media(max-width:650px){.dist-area-options{grid-template-columns:1fr}}
+
+/* Áreas junto a fecha y proyección */
+.dist-config-row{grid-column:1 / -1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:stretch;margin-bottom:18px}.dist-config-row .dist-area-fields{grid-column:auto;margin:0}.dist-config-row .dist-area-options{grid-template-columns:1fr;gap:6px}.dist-date-projection{display:flex;flex-direction:column;justify-content:space-between;min-width:0}.dist-date-projection>label:last-child>select{margin-bottom:0} @media(max-width:650px){.dist-config-row{grid-template-columns:1fr;gap:16px}.dist-date-projection{gap:0}.dist-date-projection>label:last-child>select{margin-bottom:15px}}

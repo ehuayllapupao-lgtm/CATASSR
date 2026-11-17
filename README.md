@@ -4,6 +4,12 @@ Aplicativo local para PHP + MySQL/MariaDB + XAMPP. Primera etapa de administraci
 
 ## Nuevo: Distribuciones y almacén general
 
+[Actualizar menú y ubicación del almacén](descargas/CATASSR_MENU_ALMACEN.zip) · [Instrucciones](ACTUALIZAR_MENU_ALMACEN.md)
+
+[Actualizar la pantalla simplificada](descargas/CATASSR_LIMPIEZA_DISTRIBUCIONES.zip) · [Detalles del cambio visual](ACTUALIZAR_PANTALLA_DISTRIBUCIONES.md)
+
+Almacén general se trasladó al menú lateral debajo de Distribuciones. Se retiraron Estrategias y áreas y el bloque Seleccionar distribución de la pantalla principal. Los borradores siguen accesibles mediante un historial plegable; se conservan los datos y los controles de stock.
+
 [Descargar actualización](descargas/CATASSR_DISTRIBUCIONES.zip) · [Guía de uso y cálculos](ACTUALIZAR_DISTRIBUCIONES.md)
 
 Programación por establecimiento y medicamento con cobertura de 3 a 6 meses, indicadores según la rúbrica, borradores, cantidades decididas por el administrador, inventario y movimientos del almacén. El cierre registra las salidas de todos los productos de forma conjunta. Se utilizan IMI enviados y se concilian las entregas pendientes para evitar sugerencias duplicadas.

@@ -19,11 +19,11 @@ function panel_admin_datos(PDO $d,array $filters,array $est,array $micros,?DateT
  $estById=array_column($selected,null,'id');$networks=[];
  foreach($micros as $m)if(!$filters['microred']||(int)$m['id']===$filters['microred'])$networks[$m['id']]=['id'=>(int)$m['id'],'nombre'=>$m['nombre'],'total'=>0,'enviado'=>0,'borrador'=>0,'pendiente'=>0];
  foreach($selected as $e)$networks[$e['microred_id']]['total']++;
- $data=['filtros'=>$filters,'ahora'=>$now,'total'=>count($selected),'microredes'=>$networks,'estados'=>['enviado'=>0,'borrador'=>0,'pendiente'=>0],'imi_disponible'=>false,'stock_disponible'=>false,'vencimientos_disponibles'=>false,'productos'=>[],'stock'=>['desabastecido'=>0,'sub_stock'=>0,'normal'=>0,'sobrestock'=>0,'sin_informacion'=>0],'stock_total'=>0,'sin_stock'=>[],'sin_stock_establecimientos'=>0,'proximos'=>[],'vencidos'=>[]];
+ $data=['filtros'=>$filters,'ahora'=>$now,'total'=>count($selected),'microredes'=>$networks,'pendientes'=>[],'estados'=>['enviado'=>0,'borrador'=>0,'pendiente'=>0],'imi_disponible'=>false,'stock_disponible'=>false,'vencimientos_disponibles'=>false,'productos'=>[],'stock'=>['desabastecido'=>0,'sub_stock'=>0,'normal'=>0,'sobrestock'=>0,'sin_informacion'=>0],'stock_total'=>0,'sin_stock'=>[],'sin_stock_establecimientos'=>0,'proximos'=>[],'vencidos'=>[]];
  $data['productos']=q($d,'SELECT id,codigo,nombre FROM productos ORDER BY nombre')->fetchAll();$productIds=array_fill_keys(array_column($data['productos'],'id'),true);
  try{
   $states=q($d,'SELECT establecimiento_id,estado FROM imi_reportes WHERE periodo=?',[$filters['mes'].'-01'])->fetchAll();$byState=array_column($states,'estado','establecimiento_id');
-  foreach($selected as $e){$state=$byState[$e['id']]??'pendiente';$data['estados'][$state]++;$data['microredes'][$e['microred_id']][$state]++;}
+  foreach($selected as $e){$state=$byState[$e['id']]??'pendiente';$data['estados'][$state]++;$data['microredes'][$e['microred_id']][$state]++;if($state==='pendiente')$data['pendientes'][]=$e;}
   $data['imi_disponible']=true;
  }catch(PDOException $ex){error_log('Panel IMI: '.$ex->getMessage());}
  try{

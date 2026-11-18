@@ -1,0 +1,21 @@
+<?php
+if(!isset($u,$panel,$reporte,$alertType)||$u['rol']!=='admin'){http_response_code(403);exit('Acceso no permitido.');}
+$pf=$panel['filtros'];
+$types=['sin_stock'=>['Establecimientos con stock cero',$panel['stock_disponible']?$panel['sin_stock_establecimientos']:null,'caja','pa-kpi-pending'],
+ 'vencimientos'=>['Productos por vencer',$panel['vencimientos_disponibles']?count($panel['proximos']):null,'reloj','pa-kpi-total'],
+ 'vencidos'=>['Productos vencidos',$panel['vencimientos_disponibles']?count($panel['vencidos']):null,'alerta','al-kpi-expired'],
+ 'pendientes'=>['IMI pendientes',$panel['imi_disponible']?$panel['estados']['pendiente']:null,'borrador','pa-kpi-draft']];
+?>
+<div class="pa-dashboard al-page">
+ <div class="pa-toolbar al-controls"><div><p class="pa-intro">Prioridades de hoy, en reportes para el seguimiento.</p><small>Generado el <?=e($panel['ahora']->format('d/m/Y H:i'))?> · hora de Lima</small></div><a class="pa-text-link" href="<?=e(panel_admin_url($pf))?>">Volver al panel principal →</a></div>
+ <div class="pa-kpis al-categories">
+ <?php foreach($types as $type=>$t):?><a class="pa-kpi <?=$t[3]?> <?=$alertType===$type?'al-active':''?>" href="<?=e(alertas_url($pf,$type))?>#reporte-alertas" <?=$alertType===$type?'aria-current="page"':''?>><span class="pa-icon"><?=panel_admin_icono($t[2])?></span><div><span><?=e($t[0])?></span><strong><?=panel_admin_num($t[1])?></strong><small><?=$type==='sin_stock'?'Según último IMI enviado':($type==='pendientes'?'Sin informe del mes elegido':'Catálogo general')?></small></div></a><?php endforeach;?>
+ </div>
+ <form method="get" class="al-filters al-controls"><input type="hidden" name="page" value="alertas"><div><label for="al-month">Mes del IMI</label><input id="al-month" type="month" name="mes" min="2000-01" max="2099-12" value="<?=e($pf['mes'])?>" required></div><div><label for="al-micro">Microred</label><select id="al-micro" name="microred"><option value="0">Todas las microredes</option><?php foreach($micros as $m):?><option value="<?=$m['id']?>" <?=$pf['microred']==$m['id']?'selected':''?>><?=e($m['nombre'])?></option><?php endforeach;?></select></div><div><label for="al-type">Reporte</label><select id="al-type" name="tipo"><?php foreach($types as $type=>$t):?><option value="<?=$type?>" <?=$alertType===$type?'selected':''?>><?=e($t[0])?></option><?php endforeach;?></select></div><button>Ver reporte</button></form>
+ <p class="pa-footnote al-controls">Mes y microred se aplican al stock reportado y a los IMI pendientes. Los vencimientos corresponden al catálogo general y a la fecha actual de Lima.</p>
+ <section class="pa-card al-report" id="reporte-alertas"><div class="pa-card-head"><div><span class="pa-label">CATASSR · REPORTE DE ALERTAS</span><h2><?=e($reporte['titulo'])?></h2><p><?=e($reporte['ambito'])?></p></div><?php if($reporte['disponible']):?><div class="al-actions al-controls"><a class="button" href="<?=e(alertas_url($pf,$alertType,['exportar'=>'csv']))?>">Exportar CSV (Excel)</a><button type="button" class="al-print" onclick="window.print()">Imprimir</button></div><?php endif;?></div>
+ <?php if($reporte['disponible']):?><p class="al-summary"><?=e($reporte['resumen'])?></p><div class="table al-table"><table><thead><tr><?php foreach($reporte['columnas'] as $column):?><th><?=e($column)?></th><?php endforeach;?><th class="al-controls">Acciones</th></tr></thead><tbody><?php foreach($reporte['filas'] as $row):?><tr><?php foreach($row['celdas'] as $value):?><td><?=e($value)?></td><?php endforeach;?><td class="al-controls"><a href="<?=e($row['enlace'])?>"><?=e($row['accion'])?></a><?php if(isset($row['ficha'])):?><br><a href="<?=e($row['ficha'])?>">Ver ficha</a><?php endif;?></td></tr><?php endforeach;?><?php if(!$reporte['filas']):?><tr><td colspan="<?=count($reporte['columnas'])+1?>">No se encontraron registros para este reporte.</td></tr><?php endif;?></tbody></table></div>
+ <?php else:?><p class="alert">No se pudieron consultar los datos de este reporte. Compruebe que el módulo correspondiente esté habilitado.</p><?php endif;?>
+ <p class="pa-footnote">Generado: <?=e($panel['ahora']->format('d/m/Y H:i'))?> · hora de Lima. Reporte de consulta; no modifica stock ni registros IMI.</p>
+ </section>
+</div>

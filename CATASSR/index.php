@@ -66,8 +66,8 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
  }
 }
 if(!$u){top('CATASSR');?><section class="card login"><div class="eyebrow">SALUD SEXUAL Y REPRODUCTIVA</div><h2>Bienvenido de nuevo</h2><p>Ingresa para acceder a tu espacio de trabajo.</p><?php if($error):?><p class="alert"><?=e($error)?></p><?php endif;?><form method="post"><?=token()?><input type="hidden" name="action" value="login"><label>Usuario<input name="usuario" required autocomplete="username" autofocus maxlength="80"></label><label>Contraseña<input name="clave" type="password" required autocomplete="current-password"></label><button>Iniciar sesión →</button></form><p class="muted">Acceso exclusivo para personal autorizado.</p></section><?php bottom();exit;}
-$page=$_GET['page']??'panel';$titles=['panel'=>'Panel principal','usuarios'=>'Usuarios y accesos','establecimientos'=>$u['rol']==='establecimiento'?'Datos personales':'Establecimientos de salud','microredes'=>'Microredes','productos'=>'Medicamentos e insumos'];
-if(!isset($titles[$page]) || ($page==='usuarios'&&$u['rol']!=='admin')){http_response_code(403);exit('Acceso no permitido.');}
+$page=$_GET['page']??'panel';$titles=['panel'=>'Panel principal','alertas'=>'Alertas','usuarios'=>'Usuarios y accesos','establecimientos'=>$u['rol']==='establecimiento'?'Datos personales':'Establecimientos de salud','microredes'=>'Microredes','productos'=>'Medicamentos e insumos'];
+if(!is_string($page)||!isset($titles[$page]) || (in_array($page,['usuarios','alertas'],true)&&$u['rol']!=='admin')){http_response_code(403);exit('Acceso no permitido.');}
 $microMonth=$_GET['mes']??(new DateTimeImmutable('now',new DateTimeZone('America/Lima')))->format('Y-m');
 if($page==='microredes'&&(!is_string($microMonth)||!preg_match('/^20\d{2}-(0[1-9]|1[0-2])$/',$microMonth))){http_response_code(422);exit('Mes de IMI no válido.');}
 // El ámbito se obtiene de la cuenta vigente, nunca de parámetros enviados por el navegador.
@@ -76,12 +76,20 @@ $est=q($d,'SELECT e.*,m.nombre microred,u.nombre responsable,u.activo responsabl
 $micros=q($d,'SELECT * FROM microredes ORDER BY id')->fetchAll();
 if(!in_array($u['rol'],['admin','tecnico'],true)){$allowed=array_unique(array_column($est,'microred_id'));$micros=array_values(array_filter($micros,fn($m)=>in_array($m['id'],$allowed)));}
 $panel=null;
-if($page==='panel'&&$u['rol']==='admin'){
+if(in_array($page,['panel','alertas'],true)&&$u['rol']==='admin'){
  require __DIR__.'/panel_admin_lib.php';
  try{$panelFilters=panel_admin_filtros($_GET,$micros);$panel=panel_admin_datos($d,$panelFilters,$est,$micros);}
  catch(InvalidArgumentException $ex){http_response_code(422);exit(e($ex->getMessage()));}
 }
-top($titles[$page],$u,$panel!==null?['panel_admin.css?v=1']:[]);
+$reporte=null;$alertType=null;
+if($panel!==null&&$page==='panel'&&$panel['filtros']['detalle']!=='')go('index.php?'.http_build_query(['page'=>'alertas','mes'=>$panel['filtros']['mes'],'microred'=>$panel['filtros']['microred'],'tipo'=>$panel['filtros']['detalle']]));
+if($page==='alertas'){
+ require __DIR__.'/alertas_lib.php';
+ try{$alertType=alertas_tipo($_GET);$reporte=alertas_reporte($panel,$alertType);$export=$_GET['exportar']??'';if(!is_string($export)||!in_array($export,['','csv'],true))throw new InvalidArgumentException('Exportación no válida.');}
+ catch(InvalidArgumentException $ex){http_response_code(422);exit(e($ex->getMessage()));}
+ if($export==='csv'){if(!$reporte['disponible']){http_response_code(503);exit('No hay datos disponibles para exportar este reporte.');}alertas_exportar($reporte,$panel,$alertType);}
+}
+top($titles[$page],$u,$panel!==null?['panel_admin.css?v=2']:[]);
 if($error)echo '<p class="alert">'.e($error).'</p>';
 if(isset($_SESSION['flash'])){echo '<p class="success">'.e($_SESSION['flash']).'</p>';unset($_SESSION['flash']);}
 if($page==='panel'){
@@ -92,7 +100,7 @@ if($page==='panel'){
 <section class="card"><h2>Estado del módulo IMI</h2><a class="button" href="imi.php">Abrir IMI →</a><p>El módulo IMI de prueba permite registrar movimientos por establecimiento y mes, calcular saldos y consultar el estado de los informes.</p><p>La asignación de responsables que se muestra aquí es administrativa; no representa avance de reportes.</p><?php if($u['rol']==='establecimiento'):?><p>Ingresa en IMI para registrar los movimientos de tu establecimiento.</p><?php endif;?></section>
 <?php }?>
 <details class="card"><summary>Cambiar mi contraseña</summary><form method="post" class="grid"><?=token()?><input type="hidden" name="action" value="password"><label>Contraseña actual<input name="actual" type="password" required autocomplete="current-password"></label><label>Nueva contraseña<input name="nueva" type="password" minlength="8" required autocomplete="new-password"></label><button>Actualizar contraseña</button></form></details>
-<?php }elseif($page==='usuarios'){
+<?php }elseif($page==='alertas'){require __DIR__.'/alertas.php';}elseif($page==='usuarios'){
 $contactsReady=usuarios_contacto_ready($d);$edit=null;if(isset($_GET['edit']))$edit=q($d,'SELECT * FROM usuarios WHERE id=?',[(int)$_GET['edit']])->fetch()?:null;
 $form=$edit??[];$form['cabecera_microred']=($edit&&$edit['rol']==='establecimiento'&&!empty($edit['microred_id']))?1:0;if($_SERVER['REQUEST_METHOD']==='POST'&&($_POST['action']??'')==='user_save'&&$error){$form=array_merge($form,array_intersect_key($_POST,array_flip(['nombres','apellido_paterno','apellido_materno','nombre','rol','microred_id','establecimiento_id','activo','cabecera_microred','telefono_1','telefono_2','correo'])));$form['activo']=isset($_POST['activo'])?1:0;$form['cabecera_microred']=isset($_POST['cabecera_microred'])?1:0;}
 $allEst=q($d,'SELECT * FROM establecimientos ORDER BY nombre')->fetchAll(); ?>

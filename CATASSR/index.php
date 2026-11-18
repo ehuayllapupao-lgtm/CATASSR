@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
  if($action==='logout'){$_SESSION=[];session_destroy();go();}
  if($action==='login'){
  $a=q($d,'SELECT *, (bloqueo_hasta IS NOT NULL AND bloqueo_hasta>NOW()) bloqueado FROM usuarios WHERE usuario=?',[trim((string)($_POST['usuario']??''))])->fetch();
- if($a && $a['activo'] && !$a['bloqueado'] && password_verify((string)($_POST['clave']??''),$a['clave'])){q($d,'UPDATE usuarios SET intentos=0,bloqueo_hasta=NULL WHERE id=?',[$a['id']]);session_regenerate_id(true);$_SESSION['uid']=$a['id'];$_SESSION['csrf']=bin2hex(random_bytes(32));go();}
+ if($a && $a['activo'] && !$a['bloqueado'] && password_verify((string)($_POST['clave']??''),$a['clave'])){q($d,'UPDATE usuarios SET intentos=0,bloqueo_hasta=NULL WHERE id=?',[$a['id']]);session_regenerate_id(true);$_SESSION['uid']=$a['id'];$_SESSION['csrf']=bin2hex(random_bytes(32));$_SESSION['prioridades_inicio']=$a['rol']==='admin';go();}
  if($a && !$a['bloqueado'])q($d,'UPDATE usuarios SET bloqueo_hasta=IF(intentos>=4,DATE_ADD(NOW(),INTERVAL 5 MINUTE),NULL), intentos=IF(intentos>=4,0,intentos+1) WHERE id=?',[$a['id']]);
  $error='Acceso no válido, cuenta inactiva o bloqueo temporal. Tras 5 intentos, espere 5 minutos.';
  }elseif(!$u){http_response_code(401);exit('Inicie sesión.');}
@@ -89,11 +89,15 @@ if($page==='alertas'){
  catch(InvalidArgumentException $ex){http_response_code(422);exit(e($ex->getMessage()));}
  if($export==='csv'){if(!$reporte['disponible']){http_response_code(503);exit('No hay datos disponibles para exportar este reporte.');}alertas_exportar($reporte,$panel,$alertType);}
 }
-top($titles[$page],$u,$panel!==null?['panel_admin.css?v=2']:[]);
+$showPriorities=$page==='panel'&&$u['rol']==='admin'&&!empty($_SESSION['prioridades_inicio']);
+if($showPriorities)unset($_SESSION['prioridades_inicio']);
+$styles=$panel!==null?['panel_admin.css?v=2']:[];
+if($showPriorities)$styles[]='prioridades_inicio.css?v=1';
+top($titles[$page],$u,$styles);
 if($error)echo '<p class="alert">'.e($error).'</p>';
 if(isset($_SESSION['flash'])){echo '<p class="success">'.e($_SESSION['flash']).'</p>';unset($_SESSION['flash']);}
 if($page==='panel'){
- if($u['rol']==='admin'){require __DIR__.'/panel_admin.php';}else{
+ if($u['rol']==='admin'){require __DIR__.'/panel_admin.php';if($showPriorities)require __DIR__.'/prioridades_inicio.php';}else{
  $assigned=count(array_filter($est,fn($x)=>$x['responsable']&&$x['responsable_activo']));?>
 <p class="muted">Bienvenido, <?=e($u['nombre'])?>. Este es el estado de tu ámbito de trabajo.</p><div class="stats"><article><small>Establecimientos</small><b><?=count($est)?></b><span>En tu ámbito</span></article><article><small>Microredes</small><b><?=count($micros)?></b><span>Red de atención</span></article><article><small>Responsables activos</small><b><?=$assigned?></b><span>Cuentas asignadas</span></article><article><small>Pendientes de asignar</small><b><?=count($est)-$assigned?></b><span>Sin responsable activo</span></article></div>
 <section class="hero"><div class="eyebrow">CATASSR · PRIMERA ETAPA</div><h2>Una gestión conectada<br>para toda la red.</h2><p>Establecimientos, microredes y accesos en un solo lugar.</p><a class="button light" href="index.php?page=establecimientos"><?=$u['rol']==='establecimiento'?'Ver datos personales':'Ver establecimientos'?> →</a></section>

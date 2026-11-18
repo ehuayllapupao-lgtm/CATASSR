@@ -75,14 +75,22 @@ if($page==='microredes'&&(!is_string($microMonth)||!preg_match('/^20\d{2}-(0[1-9
 $est=q($d,'SELECT e.*,m.nombre microred,u.nombre responsable,u.activo responsable_activo FROM establecimientos e JOIN microredes m ON m.id=e.microred_id LEFT JOIN usuarios u ON u.establecimiento_id=e.id WHERE '.$where.' ORDER BY m.id,e.id',$args)->fetchAll();
 $micros=q($d,'SELECT * FROM microredes ORDER BY id')->fetchAll();
 if(!in_array($u['rol'],['admin','tecnico'],true)){$allowed=array_unique(array_column($est,'microred_id'));$micros=array_values(array_filter($micros,fn($m)=>in_array($m['id'],$allowed)));}
-top($titles[$page],$u);
+$panel=null;
+if($page==='panel'&&$u['rol']==='admin'){
+ require __DIR__.'/panel_admin_lib.php';
+ try{$panelFilters=panel_admin_filtros($_GET,$micros);$panel=panel_admin_datos($d,$panelFilters,$est,$micros);}
+ catch(InvalidArgumentException $ex){http_response_code(422);exit(e($ex->getMessage()));}
+}
+top($titles[$page],$u,$panel!==null?['panel_admin.css?v=1']:[]);
 if($error)echo '<p class="alert">'.e($error).'</p>';
 if(isset($_SESSION['flash'])){echo '<p class="success">'.e($_SESSION['flash']).'</p>';unset($_SESSION['flash']);}
 if($page==='panel'){
+ if($u['rol']==='admin'){require __DIR__.'/panel_admin.php';}else{
  $assigned=count(array_filter($est,fn($x)=>$x['responsable']&&$x['responsable_activo']));?>
 <p class="muted">Bienvenido, <?=e($u['nombre'])?>. Este es el estado de tu ámbito de trabajo.</p><div class="stats"><article><small>Establecimientos</small><b><?=count($est)?></b><span>En tu ámbito</span></article><article><small>Microredes</small><b><?=count($micros)?></b><span>Red de atención</span></article><article><small>Responsables activos</small><b><?=$assigned?></b><span>Cuentas asignadas</span></article><article><small>Pendientes de asignar</small><b><?=count($est)-$assigned?></b><span>Sin responsable activo</span></article></div>
 <section class="hero"><div class="eyebrow">CATASSR · PRIMERA ETAPA</div><h2>Una gestión conectada<br>para toda la red.</h2><p>Establecimientos, microredes y accesos en un solo lugar.</p><a class="button light" href="index.php?page=establecimientos"><?=$u['rol']==='establecimiento'?'Ver datos personales':'Ver establecimientos'?> →</a></section>
 <section class="card"><h2>Estado del módulo IMI</h2><a class="button" href="imi.php">Abrir IMI →</a><p>El módulo IMI de prueba permite registrar movimientos por establecimiento y mes, calcular saldos y consultar el estado de los informes.</p><p>La asignación de responsables que se muestra aquí es administrativa; no representa avance de reportes.</p><?php if($u['rol']==='establecimiento'):?><p>Ingresa en IMI para registrar los movimientos de tu establecimiento.</p><?php endif;?></section>
+<?php }?>
 <details class="card"><summary>Cambiar mi contraseña</summary><form method="post" class="grid"><?=token()?><input type="hidden" name="action" value="password"><label>Contraseña actual<input name="actual" type="password" required autocomplete="current-password"></label><label>Nueva contraseña<input name="nueva" type="password" minlength="8" required autocomplete="new-password"></label><button>Actualizar contraseña</button></form></details>
 <?php }elseif($page==='usuarios'){
 $contactsReady=usuarios_contacto_ready($d);$edit=null;if(isset($_GET['edit']))$edit=q($d,'SELECT * FROM usuarios WHERE id=?',[(int)$_GET['edit']])->fetch()?:null;

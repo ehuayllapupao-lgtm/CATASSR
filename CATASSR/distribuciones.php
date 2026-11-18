@@ -80,7 +80,6 @@ if(isset($_GET['exportar'])&&$plan){
 }
 top($vista==='almacen'?'Almacén general':'Distribuciones',$u);if($error)echo '<p class="alert">'.e($error).'</p>';if(isset($_SESSION['flash'])){echo '<p class="success">'.e($_SESSION['flash']).'</p>';unset($_SESSION['flash']);}
 ?>
-<nav class="dist-tabs"><a class="button" href="distribuciones.php">Programaciones</a></nav>
 <?php if($vista==='programaciones'&&isset($_GET['eliminar'])):?>
 <section class="card" id="eliminar-programacion"><h2>Eliminar programación <?=e($plan?str_pad($plan['numero'],3,'0',STR_PAD_LEFT).'/'.$plan['anio']:'')?></h2>
 <?php if($plan&&$plan['estado']==='borrador'):?>
